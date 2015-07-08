@@ -1,13 +1,12 @@
 package com.epam.automation.GmailTest.webdriver;
 
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-public abstract class BaseEntity {
+public abstract class BaseEntity{
 
-	protected WebDriver browser = Browser.getInstance();
+	protected Browser browser;
 	
 	@BeforeClass
 	public void before() {
@@ -17,6 +16,6 @@ public abstract class BaseEntity {
 	
 	@AfterClass
 	public void after() {
-		browser.quit();
+		browser.exit();
 	}	
 }

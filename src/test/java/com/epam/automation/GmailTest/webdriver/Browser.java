@@ -1,25 +1,47 @@
 package com.epam.automation.GmailTest.webdriver;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Browser {
 	
-	private static WebDriver driver;
+	private static RemoteWebDriver driver;
+	private static Browser instance;
+	
 	
 	private Browser(){};
 	
-	public static WebDriver getInstance(){
-		if(driver == null){
+	public static Browser getInstance(){
+		if(instance == null){
+			
 			driver = new FirefoxDriver();
 		}
-		return driver;
+		instance = new Browser();
+		return instance;
 	}
 
-	public static WebDriver getWebDriver() {
+	public RemoteWebDriver getWebDriver() {
 		return driver;
 	}
+	
+	
+	public void exit() {
+		try {
+			driver.quit();
+			} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			instance = null;
+		}
+	}
 
+	/**
+	 * Navgates to the Url
+	 * @param url Url
+	 */
+	public void navigate(final String url) {
+		driver.navigate().to(url);
+	}
 	
 	
 }

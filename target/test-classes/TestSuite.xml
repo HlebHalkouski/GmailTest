@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><suite name="Fun Test Plan" verbose="1">
+	
+	<test name="Functional Tests" preserve-order="true">
+		<classes>
+			
+			<class name="com.epam.automation.GmailTest.test.tests.LetterGoToSpam_01" />
+			
+        </classes>
+	</test>
+</suite>
