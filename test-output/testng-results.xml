@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Fun Test Plan" duration-ms="14230" started-at="2015-07-09T14:14:58Z" finished-at="2015-07-09T14:15:12Z">
+    <groups>
+    </groups>
+    <test name="Functional Tests" duration-ms="14230" started-at="2015-07-09T14:14:58Z" finished-at="2015-07-09T14:15:12Z">
+      <class name="com.epam.automation.GmailTest.test.LetterGoToSpam_01">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.epam.automation.GmailTest.test.LetterGoToSpam_01@eadd4fb]" name="before" is-config="true" duration-ms="10" started-at="2015-07-09T17:14:58Z" finished-at="2015-07-09T17:14:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="letterGoToSpam()[pri:0, instance:com.epam.automation.GmailTest.test.LetterGoToSpam_01@eadd4fb]" name="letterGoToSpam" duration-ms="13566" started-at="2015-07-09T17:14:58Z" finished-at="2015-07-09T17:15:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- letterGoToSpam -->
+        <test-method status="PASS" signature="after()[pri:0, instance:com.epam.automation.GmailTest.test.LetterGoToSpam_01@eadd4fb]" name="after" is-config="true" duration-ms="639" started-at="2015-07-09T17:15:11Z" finished-at="2015-07-09T17:15:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
+      </class> <!-- com.epam.automation.GmailTest.test.LetterGoToSpam_01 -->
+    </test> <!-- Functional Tests -->
+  </suite> <!-- Fun Test Plan -->
+</testng-results>

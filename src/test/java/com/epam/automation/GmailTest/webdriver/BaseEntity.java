@@ -6,15 +6,15 @@ import org.testng.annotations.BeforeClass;
 
 public abstract class BaseEntity{
 
-	protected Browser browser;
+	protected Browser browser = Browser.getInstance();
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void before() {
-		browser = Browser.getInstance();		
+		browser = Browser.getInstance();	
 	}
 
 	
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void after() {
 		browser.exit();
 	}	

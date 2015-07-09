@@ -1,34 +1,44 @@
 package com.epam.automation.GmailTest.test.Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.epam.automation.GmailTest.webdriver.BasePage;
-import com.epam.automation.GmailTest.webdriver.elements.Button;
-import com.epam.automation.GmailTest.webdriver.elements.TextBox;
 
 public class LoginPage extends BasePage {
 
 	@FindBy(id = "Email")
-	private TextBox txbEmail;
+	private WebElement txbEmail;
+
+	@FindBy(id = "next")
+	private WebElement btnNext;
 	
-	@FindBy(id="next")
-	private Button btnNext;
+	@FindBy(id="Passwd")
+	private WebElement txbPassword;
+	
+	@FindBy(id="signIn")
+	private WebElement btnSingIn;
+	
 	
 	public LoginPage() {
-		super(By.id("Email"), "Login Page");
+		super(By.className("card signin-card pre-shift no-name"), "Login Page");
 		PageFactory.initElements(browser.getWebDriver(), this);
+	
 	}
 	
-	public void login(String username, String password){
-		
-		txbEmail.type(username);
+	public MainPage loginGmail(String username, String password){
+		txbEmail.sendKeys(username);
 		btnNext.click();
-		
+		txbPassword.sendKeys(password);
+		btnSingIn.click();
+		return new MainPage();
 	}
 
-	
+	public void openPage(){
+		
+	}
 
 	
 }
