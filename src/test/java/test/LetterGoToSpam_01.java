@@ -1,9 +1,9 @@
-package com.epam.automation.GmailTest.test;
+package test;
 
 import org.testng.annotations.Test;
 
-import com.epam.automation.GmailTest.test.Pages.LoginPage;
-import com.epam.automation.GmailTest.webdriver.BaseTest;
+import test.Pages.LoginPage;
+import webdriver.BaseTest;
 
 public class LetterGoToSpam_01 extends BaseTest{
 

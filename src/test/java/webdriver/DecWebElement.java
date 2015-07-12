@@ -1,4 +1,4 @@
-package com.epam.automation.GmailTest.webdriver;
+package webdriver;
 
 import java.util.List;
 
