@@ -8,16 +8,16 @@
       <![CDATA[--------==[ step 1 ]==--------<br>]]>
     </line>
   </reporter-output>
-  <suite name="Fun Test Plan" duration-ms="2314" started-at="2015-07-13T10:56:41Z" finished-at="2015-07-13T10:56:44Z">
+  <suite name="Fun Test Plan" duration-ms="443" started-at="2015-07-13T15:31:32Z" finished-at="2015-07-13T15:31:32Z">
     <groups>
     </groups>
-    <test name="Functional Tests" duration-ms="2314" started-at="2015-07-13T10:56:41Z" finished-at="2015-07-13T10:56:44Z">
+    <test name="Functional Tests" duration-ms="443" started-at="2015-07-13T15:31:32Z" finished-at="2015-07-13T15:31:32Z">
       <class name="test.LetterGoToSpam_01">
-        <test-method status="PASS" signature="before()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="before" is-config="true" duration-ms="23" started-at="2015-07-13T13:56:41Z" finished-at="2015-07-13T13:56:41Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="before" is-config="true" duration-ms="11" started-at="2015-07-13T18:31:32Z" finished-at="2015-07-13T18:31:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="FAIL" signature="letterGoToSpam(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="letterGoToSpam" duration-ms="29" started-at="2015-07-13T13:56:41Z" finished-at="2015-07-13T13:56:41Z">
+        <test-method status="FAIL" signature="letterGoToSpam(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="letterGoToSpam" duration-ms="34" started-at="2015-07-13T18:31:32Z" finished-at="2015-07-13T18:31:32Z">
           <params>
             <param index="0">
               <value>
@@ -40,21 +40,21 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[Can not set webdriver.DecWebElement field test.Pages.LoginPage.txbEmail to com.sun.proxy.$Proxy7]]>
+              <![CDATA[java.lang.ClassNotFoundException: webdriver.elements.ITextBox]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Can not set webdriver.DecWebElement field test.Pages.LoginPage.txbEmail to com.sun.proxy.$Proxy7
-	at sun.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167)
-	at sun.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171)
-	at sun.reflect.UnsafeObjectFieldAccessorImpl.set(UnsafeObjectFieldAccessorImpl.java:81)
-	at java.lang.reflect.Field.set(Field.java:764)
-	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:116)
+              <![CDATA[java.lang.RuntimeException: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
+	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:35)
+	at webdriver.elements.ElementFactory.create(ElementFactory.java:15)
+	at webdriver.fieldDecorator.FieldDecorator.decorateElement(FieldDecorator.java:39)
+	at webdriver.fieldDecorator.FieldDecorator.decorate(FieldDecorator.java:31)
+	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:112)
 	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:104)
-	at test.Pages.LoginPage.<init>(LoginPage.java:31)
+	at test.Pages.LoginPage.<init>(LoginPage.java:30)
 	at test.Steps.Steps.loginGmail(Steps.java:11)
-	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:16)
+	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:15)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -79,16 +79,25 @@
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:32)
+	... 32 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
             <line>
               <![CDATA[--------==[ step 1 ]==--------<br>]]>
             </line>
           </reporter-output>
         </test-method> <!-- letterGoToSpam -->
-        <test-method status="PASS" signature="after()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="after" is-config="true" duration-ms="2200" started-at="2015-07-13T13:56:41Z" finished-at="2015-07-13T13:56:44Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="after" is-config="true" duration-ms="369" started-at="2015-07-13T18:31:32Z" finished-at="2015-07-13T18:31:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->

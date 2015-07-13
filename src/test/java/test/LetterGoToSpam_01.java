@@ -3,7 +3,6 @@ package test;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import test.Pages.LoginPage;
 import webdriver.BaseTest;
 
 public class LetterGoToSpam_01 extends BaseTest {

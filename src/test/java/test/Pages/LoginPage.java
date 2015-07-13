@@ -1,42 +1,41 @@
 package test.Pages;
 
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import webdriver.fieldDecorator.FieldDecorator;
 import webdriver.BasePage;
-import webdriver.DecWebElement;
+import webdriver.elements.interfaces.IButton;
+import webdriver.elements.interfaces.ITextBox;
 
 public class LoginPage extends BasePage {
 
-	
-
 	@FindBy(id = "Email")
-	private WebElement txbEmail;
+	private ITextBox txbEmail;
 
 	@FindBy(id = "next")
-	private WebElement btnNext;
+	private IButton btnNext;
 	
 	@FindBy(id="Passwd")
-	private WebElement txbPassword;
+	private ITextBox txbPassword;
 	
 	@FindBy(id="signIn")
-	private WebElement btnSingIn;
+	private IButton btnSingIn;
 	
 	
 	public LoginPage() {
 		super(By.className("card signin-card pre-shift no-name"), "Login Page");
-		PageFactory.initElements(browser.getWebDriver(), this);
+		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	
 	}
 	
-	public MainPage loginGmail(String username, String password){
-		txbEmail.sendKeys(username);
+	public void loginGmail(String username, String password){
+		txbEmail.type(username);
 		btnNext.click();
-		txbPassword.sendKeys(password);
+		txbPassword.type(password);
 		btnSingIn.click();
-		return new MainPage();
 	}
 
 
