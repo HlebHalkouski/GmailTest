@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Fun Test Plan]">
+  <parameter name="password2" value="dr71gleb"/>
+  <parameter name="username2" value="hlebtemp2@gmail.com"/>
+  <parameter name="password1" value="dr71gleb"/>
+  <parameter name="username1" value="hlebtemp@gmail.com"/>
   <test name="Functional Tests(failed)">
+    <parameter name="password2" value="dr71gleb"/>
+    <parameter name="username2" value="hlebtemp2@gmail.com"/>
+    <parameter name="password1" value="dr71gleb"/>
+    <parameter name="username1" value="hlebtemp@gmail.com"/>
     <classes>
-      <class name="com.epam.automation.GmailTest.test.LetterGoToSpam_01">
+      <class name="test.LetterGoToSpam_01">
         <methods>
           <include name="before"/>
-          <include name="letterGoToSpam"/>
           <include name="after"/>
+          <include name="letterGoToSpam" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.epam.automation.GmailTest.test.LetterGoToSpam_01 -->
+      </class> <!-- test.LetterGoToSpam_01 -->
     </classes>
   </test> <!-- Functional Tests(failed) -->
 </suite> <!-- Failed suite [Fun Test Plan] -->

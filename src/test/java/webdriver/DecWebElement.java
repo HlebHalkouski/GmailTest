@@ -12,7 +12,21 @@ import org.openqa.selenium.remote.RemoteWebElement;
 public class DecWebElement extends BaseEntity implements WebElement{
 
 	protected RemoteWebElement element;
+	private By locator;
+	private String name;
 	
+	public DecWebElement(RemoteWebElement element) {
+		this.element = element;
+	}
+	
+	public DecWebElement(By locator, String name) {
+		this.locator = locator;
+		this.name = name;
+		element = (RemoteWebElement) browser.getWebDriver().findElement(locator);
+		
+	}
+
+
 	public void click() {
 		waitForIsElementPresent();
 		browser.getWebDriver().getMouse().mouseMove(element.getCoordinates());
@@ -26,25 +40,19 @@ public class DecWebElement extends BaseEntity implements WebElement{
 	
 	private void waitForIsElementPresent() {
 		
-	}
-
-	public void clear() {
-		
 		
 	}
-
+	
+	
 	public WebElement findElement(By arg0) {
-		
 		return element.findElement(arg0);
 	}
 
 	public List<WebElement> findElements(By arg0) {
-		
 		return element.findElements(arg0);
 	}
 
 	public String getAttribute(String arg0) {
-		
 		return element.getAttribute(arg0);
 	}
 
@@ -88,6 +96,12 @@ public class DecWebElement extends BaseEntity implements WebElement{
 
 	public void submit() {
 		element.submit();
+		
+	}
+
+
+	public void clear() {
+		element.clear();
 		
 	}
 

@@ -9,19 +9,31 @@ public class Browser {
 	
 	private static RemoteWebDriver driver;
 	private static Browser instance;
-	private static long IMPLICITY_WAIT = 10;
-	private static final long PAGE_LOAD_TIMEOUT = 20;
+	public static PropertiesManager props;
+	
+	private static long timeoutForPageLoad;
+	private static long implicitlyWait;
+	
+	private final static String PAGE_LOAD_TIMEOUT = "PageLoadTimeout";
+	private final static String IMPLICITLY_WAIT = "ImplicitlyWait";
+	
+	private final static String PROPERTIES_FILE = "selenium.properties";
 	
 	
-	private Browser(){};
+	
+	private Browser(){
+		Logger.getInstance().info("Browser is ready");
+	};
 	
 	public static Browser getInstance(){
+		initProperties();
 		if(instance == null){
 			driver = new FirefoxDriver();
-			driver.manage().timeouts().implicitlyWait(IMPLICITY_WAIT , TimeUnit.SECONDS);
-			driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);  		 
+			driver.manage().timeouts().implicitlyWait(implicitlyWait, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(timeoutForPageLoad, TimeUnit.SECONDS); 
+			driver.get(getBaseUrl());
+			instance = new Browser();
 		}
-		instance = new Browser();
 		return instance;
 	}
 
@@ -29,6 +41,17 @@ public class Browser {
 		return driver;
 	}
 	
+	public static String getBaseUrl(){
+		return System.getProperty("urlLoginPage", props.getProperty("urlLoginPage"));
+	}
+	
+	private static void initProperties() {
+
+		props = new PropertiesManager(PROPERTIES_FILE);
+		timeoutForPageLoad = Long.parseLong(props.getProperty(PAGE_LOAD_TIMEOUT));
+		implicitlyWait = Long.parseLong(props.getProperty(IMPLICITLY_WAIT));
+	}
+
 	
 	public void exit() {
 		try {

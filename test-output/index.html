@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Fun_Test_Plan">
-              <span class="suite-name border-passed">Fun Test Plan</span>
+              <span class="suite-name border-failed">Fun Test Plan</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Fun_Test_Plan" class="hide-methods passed suite-Fun_Test_Plan"> (hide)</a> <!-- hide-methods passed suite-Fun_Test_Plan -->
-                      <a href="#" panel-name="suite-Fun_Test_Plan" class="show-methods passed suite-Fun_Test_Plan"> (show)</a> <!-- show-methods passed suite-Fun_Test_Plan -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Fun_Test_Plan" class="hide-methods failed suite-Fun_Test_Plan"> (hide)</a> <!-- hide-methods failed suite-Fun_Test_Plan -->
+                      <a href="#" panel-name="suite-Fun_Test_Plan" class="show-methods failed suite-Fun_Test_Plan"> (show)</a> <!-- show-methods failed suite-Fun_Test_Plan -->
                     </span>
-                    <div class="method-list-content passed suite-Fun_Test_Plan">
+                    <div class="method-list-content failed suite-Fun_Test_Plan">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fun_Test_Plan" title="com.epam.automation.GmailTest.test.LetterGoToSpam_01" hash-for-method="letterGoToSpam">letterGoToSpam</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Fun_Test_Plan" title="test.LetterGoToSpam_01" hash-for-method="letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)">letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Fun_Test_Plan -->
+                    </div> <!-- method-list-content failed suite-Fun_Test_Plan -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,21 +116,30 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Fun_Test_Plan" class="panel Fun_Test_Plan">
-          <div class="suite-Fun_Test_Plan-class-passed">
+          <div class="suite-Fun_Test_Plan-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.epam.automation.GmailTest.test.LetterGoToSpam_01</span>
+              <img src="failed.png"/>
+              <span class="class-name">test.LetterGoToSpam_01</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="letterGoToSpam">
-                  </a> <!-- letterGoToSpam -->
+                  <a name="letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)">
+                  </a> <!-- letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb) -->
                   <span class="method-name">letterGoToSpam</span>
+                  <span class="parameters">(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: Can not set webdriver.DecWebElement field test.Pages.LoginPage.txbEmail to com.sun.proxy.$Proxy7
+	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:116)
+	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:104)
+	at test.Pages.LoginPage.&lt;init&gt;(LoginPage.java:31)
+	at test.Steps.Steps.loginGmail(Steps.java:11)
+	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:16)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Fun_Test_Plan-class-passed -->
+          </div> <!-- suite-Fun_Test_Plan-class-failed -->
         </div> <!-- panel Fun_Test_Plan -->
         <div panel-name="test-xml-Fun_Test_Plan" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -142,8 +151,12 @@
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Fun Test Plan&quot;&gt;
   &lt;test name=&quot;Functional Tests&quot;&gt;
+    &lt;parameter name=&quot;password2&quot; value=&quot;dr71gleb&quot;/&gt;
+    &lt;parameter name=&quot;username2&quot; value=&quot;hlebtemp2@gmail.com&quot;/&gt;
+    &lt;parameter name=&quot;password1&quot; value=&quot;dr71gleb&quot;/&gt;
+    &lt;parameter name=&quot;username1&quot; value=&quot;hlebtemp@gmail.com&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.epam.automation.GmailTest.test.LetterGoToSpam_01&quot;/&gt;
+      &lt;class name=&quot;test.LetterGoToSpam_01&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Functional Tests --&gt;
 &lt;/suite&gt; &lt;!-- Fun Test Plan --&gt;
@@ -186,13 +199,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'letterGoToSpam')
-data.setCell(0, 2, 'com.epam.automation.GmailTest.test.LetterGoToSpam_01')
-data.setCell(0, 3, 13566);
+data.setCell(0, 2, 'test.LetterGoToSpam_01')
+data.setCell(0, 3, 29);
 window.suiteTableData['Fun_Test_Plan']= { tableData: data, tableDiv: 'times-div-Fun_Test_Plan'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 29 ms</span>
               <div id="times-div-Fun_Test_Plan">
               </div> <!-- times-div-Fun_Test_Plan -->
             </div> <!-- times-div -->
@@ -203,6 +216,12 @@ return data;
             <span class="header-content">Reporter output for Fun Test Plan</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">--------==[ step 1 ]==--------<br></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Fun_Test_Plan" class="panel">
@@ -218,18 +237,20 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.epam.automation.GmailTest.test.LetterGoToSpam_01</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.LetterGoToSpam_01</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">letterGoToSpam</span>
-                <span class="method-start">13 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</span>
+                <span class="method-start">27 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">13580 ms</span>
+                <span class="method-start">89 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

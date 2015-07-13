@@ -7,16 +7,21 @@ import webdriver.BaseEntity;
 
 public class Steps extends BaseEntity {
 
-	public void loginGmail(String username1, String password1) {
+	public void loginGmail(String username, String password) {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginGmail(username1, password1);
+		loginPage.loginGmail(username, password);
 	}
 
-	public void sendMessageToUser2() {
+	/**
+	 * Send message to user.
+	 *
+	 * @param username email username addressee
+	 */
+	public void sendMessageToUser(String username) {
 		MainPage mainPage = new MainPage();
 		mainPage.startWriteNewMessage();
 		NewMessageForm newMessageForm = new NewMessageForm();
-		newMessageForm.sendMessageToUser2();
+		newMessageForm.sendMessageToUser(username);
 	}
 
 

@@ -15,8 +15,7 @@ public abstract class BasePage extends BaseEntity{
 
 
 	private void assertIsOpen() {
-		
-		
+			
 	}
 
 	private void init(By locator, String title) {

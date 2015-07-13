@@ -6,8 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import webdriver.BasePage;
+import webdriver.DecWebElement;
 
 public class LoginPage extends BasePage {
+
+	
 
 	@FindBy(id = "Email")
 	private WebElement txbEmail;
@@ -36,9 +39,6 @@ public class LoginPage extends BasePage {
 		return new MainPage();
 	}
 
-	public void openPage(){
-		
-	}
 
 	
 }

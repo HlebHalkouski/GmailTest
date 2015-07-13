@@ -9,8 +9,6 @@ import webdriver.BasePage;
 import webdriver.utils.RandomString;
 
 public class NewMessageForm extends BasePage {
-
-	private static final String USERNAME2 = "hlebtemp2@gmail.com";
 	
 	@FindBy(xpath = "//textarea[@aria-label='Кому']")
 	private WebElement txbAdressTo;
@@ -30,10 +28,11 @@ public class NewMessageForm extends BasePage {
 		PageFactory.initElements(browser.getWebDriver(), this);	
 	}
 
-	public void sendMessageToUser2(){
-		txbAdressTo.sendKeys(USERNAME2);
+	public void sendMessageToUser(String username){
+		txbAdressTo.sendKeys(username);
 		txbTheme.sendKeys(RandomString.getRandomString(5));
 		txbMessageBody.sendKeys(RandomString.getRandomString(30));
 		btnSend.click();
 	}
+
 }

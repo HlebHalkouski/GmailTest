@@ -7,14 +7,17 @@ import org.testng.annotations.BeforeClass;
 public abstract class BaseEntity{
 
 	protected Browser browser = Browser.getInstance();
+	protected Logger logger = Logger.getInstance();
+			
 	
-	@BeforeClass(alwaysRun = true)
+	@BeforeClass
 	public void before() {
 		browser = Browser.getInstance();	
+		logger = Logger.getInstance();
 	}
 
 	
-	@AfterClass(alwaysRun = true)
+	@AfterClass
 	public void after() {
 		browser.exit();
 	}	
