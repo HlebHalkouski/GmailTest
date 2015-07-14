@@ -8,16 +8,16 @@
       <![CDATA[--------==[ step 1 ]==--------<br>]]>
     </line>
   </reporter-output>
-  <suite name="Fun Test Plan" duration-ms="443" started-at="2015-07-13T15:31:32Z" finished-at="2015-07-13T15:31:32Z">
+  <suite name="Fun Test Plan" duration-ms="525" started-at="2015-07-14T09:10:42Z" finished-at="2015-07-14T09:10:43Z">
     <groups>
     </groups>
-    <test name="Functional Tests" duration-ms="443" started-at="2015-07-13T15:31:32Z" finished-at="2015-07-13T15:31:32Z">
+    <test name="Functional Tests" duration-ms="525" started-at="2015-07-14T09:10:42Z" finished-at="2015-07-14T09:10:43Z">
       <class name="test.LetterGoToSpam_01">
-        <test-method status="PASS" signature="before()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="before" is-config="true" duration-ms="11" started-at="2015-07-13T18:31:32Z" finished-at="2015-07-13T18:31:32Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="before" is-config="true" duration-ms="8" started-at="2015-07-14T12:10:42Z" finished-at="2015-07-14T12:10:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="FAIL" signature="letterGoToSpam(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="letterGoToSpam" duration-ms="34" started-at="2015-07-13T18:31:32Z" finished-at="2015-07-13T18:31:32Z">
+        <test-method status="FAIL" signature="letterGoToSpam(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="letterGoToSpam" duration-ms="57" started-at="2015-07-14T12:10:42Z" finished-at="2015-07-14T12:10:42Z">
           <params>
             <param index="0">
               <value>
@@ -42,17 +42,17 @@
           </params>
           <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[java.lang.ClassNotFoundException: webdriver.elements.ITextBox]]>
+              <![CDATA[java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
-	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:35)
-	at webdriver.elements.ElementFactory.create(ElementFactory.java:15)
-	at webdriver.fieldDecorator.FieldDecorator.decorateElement(FieldDecorator.java:39)
-	at webdriver.fieldDecorator.FieldDecorator.decorate(FieldDecorator.java:31)
+              <![CDATA[java.lang.RuntimeException: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
+	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:34)
+	at selenium.step2.impt.DefaultElementFactory.create(DefaultElementFactory.java:15)
+	at selenium.step2.ExtendedFieldDecorator.decorateElement(ExtendedFieldDecorator.java:37)
+	at selenium.step2.ExtendedFieldDecorator.decorate(ExtendedFieldDecorator.java:30)
 	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:112)
 	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:104)
-	at test.Pages.LoginPage.<init>(LoginPage.java:30)
+	at test.Pages.LoginPage.<init>(LoginPage.java:35)
 	at test.Steps.Steps.loginGmail(Steps.java:11)
 	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:15)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -79,14 +79,14 @@
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
+Caused by: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
 	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
 	at java.lang.Class.forName0(Native Method)
 	at java.lang.Class.forName(Class.java:264)
-	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:32)
+	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:32)
 	... 32 more
 ]]>
             </full-stacktrace>
@@ -97,7 +97,7 @@ Caused by: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
             </line>
           </reporter-output>
         </test-method> <!-- letterGoToSpam -->
-        <test-method status="PASS" signature="after()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="after" is-config="true" duration-ms="369" started-at="2015-07-13T18:31:32Z" finished-at="2015-07-13T18:31:32Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:test.LetterGoToSpam_01@25be7b63]" name="after" is-config="true" duration-ms="433" started-at="2015-07-14T12:10:42Z" finished-at="2015-07-14T12:10:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->

@@ -1,9 +1,5 @@
 package webdriver.elements.interfaces;
 
 public interface Element {
-    
-	boolean isDisplayed();
-	
-	void click();
-
+    boolean isDisplayed();
 }

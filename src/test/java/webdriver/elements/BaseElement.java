@@ -1,19 +1,18 @@
 package webdriver.elements;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 
 import webdriver.elements.interfaces.Element;
 
-public abstract class BaseElement implements Element {
-    
-	protected final RemoteWebElement element;
+abstract class BaseElement implements Element {
+    protected final WebElement wrappedElement;
 
     protected BaseElement(final WebElement wrappedElement) {
-        this.element = (RemoteWebElement) wrappedElement;
+        this.wrappedElement = wrappedElement;
     }
+
     
     public boolean isDisplayed() {
-        return element.isDisplayed();
+        return wrappedElement.isDisplayed();
     }
 }

@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import static java.text.MessageFormat.format;
 
-public class ElementFactory implements IElementFactory{
+public class ElementFactory implements IElementFactory {
     public <E extends Element> E create(final Class<E> elementClass, final WebElement wrappedElement) {
         try {
             return findImplementationFor(elementClass)
@@ -29,8 +29,7 @@ public class ElementFactory implements IElementFactory{
     @SuppressWarnings("unchecked")
 	private <E extends Element> Class<? extends E> findImplementationFor(final Class<E> elementClass) {
         try {
-        	System.out.println((Class<? extends E>) Class.forName(format("{0}.{1}", getClass().getPackage().getName(), elementClass.getSimpleName())));
-        	return (Class<? extends E>) Class.forName(format("{0}.{1}", getClass().getPackage().getName(), elementClass.getSimpleName()));
+        	return (Class<? extends E>) Class.forName(format("{0}.{1}Element", getClass().getPackage().getName(), elementClass.getSimpleName()));
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

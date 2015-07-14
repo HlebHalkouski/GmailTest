@@ -3,7 +3,7 @@ package webdriver.fieldDecorator;
 import org.openqa.selenium.WebElement;
 
 public class ContainerFactory implements IContainerFactory {
-   
+
     public <C extends Container> C create(final Class<C> containerClass, final WebElement wrappedElement) {
         final C container = createInstanceOf(containerClass);
         container.init(wrappedElement);

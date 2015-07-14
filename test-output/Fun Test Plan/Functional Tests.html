@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 13 18:31:32 MSK 2015</td>
+<td>Started on:</td><td>Tue Jul 14 12:10:42 MSK 2015</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (443 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (525 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -83,34 +83,34 @@ function toggleAllBoxes() {
 --------==[ step 1 ]==--------<br><br/>
 </div>
 </td>
-<td><div><pre>java.lang.RuntimeException: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
-	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:35)
-	at webdriver.elements.ElementFactory.create(ElementFactory.java:15)
-	at webdriver.fieldDecorator.FieldDecorator.decorateElement(FieldDecorator.java:39)
-	at webdriver.fieldDecorator.FieldDecorator.decorate(FieldDecorator.java:31)
+<td><div><pre>java.lang.RuntimeException: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
+	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:34)
+	at selenium.step2.impt.DefaultElementFactory.create(DefaultElementFactory.java:15)
+	at selenium.step2.ExtendedFieldDecorator.decorateElement(ExtendedFieldDecorator.java:37)
+	at selenium.step2.ExtendedFieldDecorator.decorate(ExtendedFieldDecorator.java:30)
 	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:112)
 	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:104)
-	at test.Pages.LoginPage.&lt;init&gt;(LoginPage.java:30)
+	at test.Pages.LoginPage.&lt;init&gt;(LoginPage.java:35)
 	at test.Steps.Steps.loginGmail(Steps.java:11)
 	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:15)
-Caused by: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
+Caused by: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
 	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
 	at java.lang.Class.forName0(Native Method)
 	at java.lang.Class.forName(Class.java:264)
-	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:32)
+	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:32)
 	... 32 more
 ... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace258535644", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace258535644'><pre>java.lang.RuntimeException: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
-	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:35)
-	at webdriver.elements.ElementFactory.create(ElementFactory.java:15)
-	at webdriver.fieldDecorator.FieldDecorator.decorateElement(FieldDecorator.java:39)
-	at webdriver.fieldDecorator.FieldDecorator.decorate(FieldDecorator.java:31)
+<div class='stack-trace' id='stack-trace258535644'><pre>java.lang.RuntimeException: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
+	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:34)
+	at selenium.step2.impt.DefaultElementFactory.create(DefaultElementFactory.java:15)
+	at selenium.step2.ExtendedFieldDecorator.decorateElement(ExtendedFieldDecorator.java:37)
+	at selenium.step2.ExtendedFieldDecorator.decorate(ExtendedFieldDecorator.java:30)
 	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:112)
 	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:104)
-	at test.Pages.LoginPage.&lt;init&gt;(LoginPage.java:30)
+	at test.Pages.LoginPage.&lt;init&gt;(LoginPage.java:35)
 	at test.Steps.Steps.loginGmail(Steps.java:11)
 	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:15)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -137,14 +137,14 @@ Caused by: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.lang.ClassNotFoundException: webdriver.elements.ITextBox
+Caused by: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
 	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
 	at java.lang.Class.forName0(Native Method)
 	at java.lang.Class.forName(Class.java:264)
-	at webdriver.elements.ElementFactory.findImplementationFor(ElementFactory.java:32)
+	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:32)
 	... 32 more
 </pre></div></td>
 <td>0</td>

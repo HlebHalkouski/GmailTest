@@ -14,8 +14,7 @@ import webdriver.elements.interfaces.IElementFactory;
 import java.lang.reflect.Field;
 
 public class FieldDecorator extends DefaultFieldDecorator {
-    
-	private IElementFactory elementFactory = new ElementFactory();
+    private IElementFactory elementFactory = new ElementFactory();
     private IContainerFactory containerFactory = new ContainerFactory();
 
     public FieldDecorator(final SearchContext searchContext) {
@@ -33,8 +32,7 @@ public class FieldDecorator extends DefaultFieldDecorator {
         return super.decorate(loader, field);
     }
 
-    @SuppressWarnings("unchecked")
-	private Object decorateElement(final ClassLoader loader, final Field field) {
+    private Object decorateElement(final ClassLoader loader, final Field field) {
         final WebElement wrappedElement = proxyForLocator(loader, createLocator(field));
         return elementFactory.create((Class<? extends Element>) field.getType(), wrappedElement);
     }
@@ -43,8 +41,7 @@ public class FieldDecorator extends DefaultFieldDecorator {
         return factory.createLocator(field);
     }
 
-    @SuppressWarnings("unchecked")
-	private Object decorateContainer(final ClassLoader loader, final Field field) {
+    private Object decorateContainer(final ClassLoader loader, final Field field) {
         final WebElement wrappedElement = proxyForLocator(loader, createLocator(field));
         final Container container = containerFactory.create((Class<? extends Container>) field.getType(), wrappedElement);
 
