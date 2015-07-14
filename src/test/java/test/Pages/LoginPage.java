@@ -12,7 +12,7 @@ import webdriver.fieldDecorator.FieldDecorator;
 
 public class LoginPage extends BasePage {
 
-	private static final String URL_PAGE = "https://accounts.google.com/";
+	private static final String URL_PAGE = "https://gmail.com/";
 	
 	@FindBy(id = "Email")
 	private TextBox txbEmail;
@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
 	
 	
 	public LoginPage() {
-		super(By.className("card signin-card pre-shift no-name"), "Login Page");
+		super(By.id("gaia_loginform"), "Login Page");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	}
 	
@@ -39,9 +39,11 @@ public class LoginPage extends BasePage {
 		btnSingIn.click();
 	}
 	
-	public String getUrlPage(){
+	public static String getUrlPage(){
 		return URL_PAGE;
 	}
+
+
 
 
 	

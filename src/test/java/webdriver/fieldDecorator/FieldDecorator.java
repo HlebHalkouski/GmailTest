@@ -32,7 +32,8 @@ public class FieldDecorator extends DefaultFieldDecorator {
         return super.decorate(loader, field);
     }
 
-    private Object decorateElement(final ClassLoader loader, final Field field) {
+    @SuppressWarnings("unchecked")
+	private Object decorateElement(final ClassLoader loader, final Field field) {
         final WebElement wrappedElement = proxyForLocator(loader, createLocator(field));
         return elementFactory.create((Class<? extends Element>) field.getType(), wrappedElement);
     }
@@ -41,7 +42,8 @@ public class FieldDecorator extends DefaultFieldDecorator {
         return factory.createLocator(field);
     }
 
-    private Object decorateContainer(final ClassLoader loader, final Field field) {
+    @SuppressWarnings("unchecked")
+	private Object decorateContainer(final ClassLoader loader, final Field field) {
         final WebElement wrappedElement = proxyForLocator(loader, createLocator(field));
         final Container container = containerFactory.create((Class<? extends Container>) field.getType(), wrappedElement);
 

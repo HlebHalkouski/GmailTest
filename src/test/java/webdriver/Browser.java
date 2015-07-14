@@ -2,11 +2,13 @@ package webdriver;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Browser {
 	
+	private static final String SESSION_COOKIE_NAME = "APISID";
 	private static RemoteWebDriver driver;
 	private static Browser instance;
 	public static PropertiesManager props;
@@ -46,7 +48,6 @@ public class Browser {
 	}
 	
 	private static void initProperties() {
-
 		props = new PropertiesManager(PROPERTIES_FILE);
 		timeoutForPageLoad = Long.parseLong(props.getProperty(PAGE_LOAD_TIMEOUT));
 		implicitlyWait = Long.parseLong(props.getProperty(IMPLICITLY_WAIT));
@@ -69,6 +70,31 @@ public class Browser {
 	 */
 	public void navigate(final String url) {
 		driver.navigate().to(url);
+	}
+
+	public int getImplicitlyWait() {
+		return  Integer.parseInt(props.getProperty(IMPLICITLY_WAIT));
+	}
+	
+	public int getPageLoadTimeout() {
+		return  Integer.parseInt(props.getProperty(PAGE_LOAD_TIMEOUT));
+	}
+
+	public Cookie getSessionCookie() {
+		return driver.manage().getCookieNamed(SESSION_COOKIE_NAME);
+	}
+	
+	public void addCookieAndRefresh(Cookie cookie){
+		driver.manage().addCookie(cookie);
+		driver.navigate().refresh();
+	}
+
+	public void deleteAllCookiesAndRefresh() {
+		do {
+			driver.manage().deleteAllCookies();
+			driver.navigate().refresh();
+		} while (driver.manage().getCookieNamed("LSID") != null);
+
 	}
 	
 	

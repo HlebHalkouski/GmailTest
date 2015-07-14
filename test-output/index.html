@@ -128,26 +128,22 @@
                   </a> <!-- letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb) -->
                   <span class="method-name">letterGoToSpam</span>
                   <span class="parameters">(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</span>
-                  <div class="stack-trace">java.lang.RuntimeException: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
-	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:34)
-	at selenium.step2.impt.DefaultElementFactory.create(DefaultElementFactory.java:15)
-	at selenium.step2.ExtendedFieldDecorator.decorateElement(ExtendedFieldDecorator.java:37)
-	at selenium.step2.ExtendedFieldDecorator.decorate(ExtendedFieldDecorator.java:30)
-	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:112)
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:104)
-	at test.Pages.LoginPage.&lt;init&gt;(LoginPage.java:35)
-	at test.Steps.Steps.loginGmail(Steps.java:11)
-	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:15)
-Caused by: java.lang.ClassNotFoundException: selenium.step2.impt.TextFieldElement
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Class.java:264)
-	at selenium.step2.impt.DefaultElementFactory.findImplementationFor(DefaultElementFactory.java:32)
-	... 32 more
-... Removed 24 stack frames
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: This page is asking you to confirm that you want to leave - data you have entered may not be saved.): This page is asking you to confirm that you want to leave - data you have entered may not be saved.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=35.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: bf11a2d7-a0de-4486-a8e2-b1405530be35
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:185)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:152)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.getCookies(RemoteWebDriver.java:704)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.getCookieNamed(RemoteWebDriver.java:732)
+	at webdriver.Browser.deleteAllCookiesAndRefresh(Browser.java:96)
+	at test.LetterGoToSpam_01.letterGoToSpam(LetterGoToSpam_01.java:37)
+... Removed 28 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -213,12 +209,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'letterGoToSpam')
 data.setCell(0, 2, 'test.LetterGoToSpam_01')
-data.setCell(0, 3, 57);
+data.setCell(0, 3, 31467);
 window.suiteTableData['Fun_Test_Plan']= { tableData: data, tableDiv: 'times-div-Fun_Test_Plan'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 57 ms</span>
+              <span class="suite-total-time">Total running time: 31 seconds</span>
               <div id="times-div-Fun_Test_Plan">
               </div> <!-- times-div-Fun_Test_Plan -->
             </div> <!-- times-div -->
@@ -233,6 +229,32 @@ return data;
               <span class="reporter-method-name">letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">--------==[ step 1 ]==--------<br></span>
+                <span class="reporter-method-output">Page Login Page appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp@gmail.com' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 2 ]==--------<br></span>
+                <span class="reporter-method-output">Page Main Page appears<br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">Page New Message Form appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
+                <span class="reporter-method-output">TextBoxElement typing '8DDXU' <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'PW8S1LRF5GWNDRYJYZ60XX29N33ZNT' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 3 ]==--------<br></span>
+                <span class="reporter-method-output">Page Login Page appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 4 ]==--------<br></span>
+                <span class="reporter-method-output">Page Main Page appears<br></span>
+                <span class="reporter-method-output">LabelElement clicking <br></span>
+                <span class="reporter-method-output">Page Message Page appears<br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">LabelElement clicking <br></span>
+                <span class="reporter-method-output">Page Main Page appears<br></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -251,19 +273,23 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">test.LetterGoToSpam_01</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">startTest</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">17 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">letterGoToSpam(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</span>
-                <span class="method-start">11 ms</span>
+                <span class="method-start">23 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">79 ms</span>
+                <span class="method-start">31497 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
