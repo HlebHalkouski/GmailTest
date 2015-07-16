@@ -7,6 +7,7 @@ import test.Steps.Steps;
 public abstract class BaseTest extends BaseEntity {
 
 	protected Steps steps = new Steps();
+	protected Asserts Assert = new Asserts();
 	
 	protected String formatLogMsg(final String message) {
 		return message;
@@ -16,6 +17,5 @@ public abstract class BaseTest extends BaseEntity {
 	public void startTest(){
 		Logger.getInstance().logTestName(this.getClass().getName());
 	}
-	
 	
 }

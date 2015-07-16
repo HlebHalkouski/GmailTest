@@ -8,7 +8,8 @@ public abstract class BaseEntity {
 
 	protected Browser browser = Browser.getInstance();
 	protected Logger logger = Logger.getInstance();
-
+	
+	
 	@BeforeClass
 	public void before() {
 		browser = Browser.getInstance();
@@ -17,7 +18,9 @@ public abstract class BaseEntity {
 
 	@AfterClass
 	public void after() {
-		browser.exit();
+		if (browser.isBrowserAlive()) {
+			browser.exit();
+		}
 	}
 
 	/**
@@ -78,4 +81,6 @@ public abstract class BaseEntity {
 	protected void step(int number){
 		logger.step(number);	
 	}
+	
+	
 }

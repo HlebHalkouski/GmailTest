@@ -17,6 +17,13 @@ public class MessagePage extends BasePage{
 	@FindBy(xpath = "//div[contains(text(), 'В спам!')]")
 	private Label lbInSpam;
 	
+	@FindBy(xpath = "//span[@title='Удалить ярлык Спам из данной цепочки']")
+	private Label lbNotSpam;
+	
+	private final static String xPathSpamMessages = "//span[@class='bofITb']";
+	@FindBy(xpath = xPathSpamMessages)
+	private Label lbSpamMessages;
+	
 	public MessagePage() {
 		super(By.xpath("//div[@class='G3 G2']"), "Message Page");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
@@ -25,6 +32,13 @@ public class MessagePage extends BasePage{
 	public void markMessageAsSpam() {
 		btnMore.click();
 		lbInSpam.click();
+		lbSpamMessages.waitForIsElementPresent(By.xpath(xPathSpamMessages));
+	}
+
+	public void markMessageIsNoSpam() {
+		btnMore.click();
+		lbNotSpam.click();
+		lbSpamMessages.waitForIsElementPresent(By.xpath(xPathSpamMessages));
 	}
 	
 	

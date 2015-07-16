@@ -9,6 +9,7 @@ public abstract class BasePage extends BaseEntity{
 	protected By locator;
 	protected String pageTitle;
 	
+	
 	protected BasePage(By locator, String pageTitle){
 		this.locator = locator;
 		this.pageTitle = pageTitle;		

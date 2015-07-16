@@ -11,8 +11,8 @@ public class LabelElement extends BaseElement implements Label {
 		super(wrappedElement);	
 	}
 	
-	public LabelElement(By xpath) {
-		super(xpath);
+	public LabelElement(By locator) {
+		super(locator);
 		
 	}
 

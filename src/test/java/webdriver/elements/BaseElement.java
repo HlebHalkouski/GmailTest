@@ -21,7 +21,8 @@ abstract class BaseElement extends BaseEntity implements Element {
 	protected WebElement element;
 	private By locator;
 	
-    protected BaseElement(final WebElement wrappedElement) {
+  
+	protected BaseElement(final WebElement wrappedElement) {
         this.element =  wrappedElement;
     }
     
@@ -30,6 +31,8 @@ abstract class BaseElement extends BaseEntity implements Element {
     	this.element = browser.getWebDriver().findElement(locator);
 	}
 
+    
+    
 	/**
 	 * Click on the item.
 	 */
@@ -78,6 +81,15 @@ abstract class BaseElement extends BaseEntity implements Element {
 		Assert.assertTrue(element.isDisplayed(), "is absent");
 	}
 	
+	/**
+	 * Wait for element is present.
+	 */
+	public void waitForIsElementPresent(By locator) {
+		this.locator = locator;
+		isPresent(Integer.valueOf(browser.getImplicitlyWait()));
+		Assert.assertTrue(element.isDisplayed(), "is absent");
+	}
+	
 
 	public boolean isPresent() {
 		return false;
@@ -118,5 +130,13 @@ abstract class BaseElement extends BaseEntity implements Element {
 		return false;
 	}
 	
+	  public By getLocator() {
+			return locator;
+		}
+
+		public void setLocator(By locator) {
+			this.locator = locator;
+		}
+
 	
 }

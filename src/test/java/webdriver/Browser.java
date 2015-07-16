@@ -3,8 +3,12 @@ package webdriver;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Browser {
 	
@@ -57,15 +61,25 @@ public class Browser {
 	public void exit() {
 		try {
 			driver.quit();
+			Logger.getInstance().info("driver is quit");
 			} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			instance = null;
 		}
 	}
+	
+	/**
+	 * Checks is Browser alive
+	 * @return true\false
+	 */
+	public boolean isBrowserAlive(){
+		 return instance != null;
+		
+	}
 
 	/**
-	 * Navgates to the Url
+	 * Navigates to the Url
 	 * @param url Url
 	 */
 	public void navigate(final String url) {
@@ -88,8 +102,34 @@ public class Browser {
 		driver.manage().addCookie(cookie);
 		driver.navigate().refresh();
 	}
+	
+	/**
+	 * wait the download page (on Javascript readyState)
+	 */
+	public void waitForPageToLoad() {
+		WebDriverWait wait = new WebDriverWait(driver, getPageLoadTimeout());
+
+		try {
+			wait.until((ExpectedCondition<Boolean>) new ExpectedCondition<Boolean>() {
+				public Boolean apply(final WebDriver d) {
+					if (!(d instanceof JavascriptExecutor)) {
+						return true;
+					}
+					Object result = ((JavascriptExecutor) d)
+							.executeScript("return document['readyState'] ? 'complete' == document.readyState : true");
+					if (result != null && result instanceof Boolean && (Boolean) result) {
+						return true;
+					}
+					return false;
+				}
+			});
+		} catch (Exception e) {
+			Logger.getInstance().warn("Page timeout!");
+		}
+	}
 
 	public void deleteAllCookiesAndRefresh() {
+		waitForPageToLoad();
 		do {
 			driver.manage().deleteAllCookies();
 			driver.navigate().refresh();
