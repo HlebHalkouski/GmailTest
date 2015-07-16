@@ -82,5 +82,14 @@ public abstract class BaseEntity {
 		logger.step(number);	
 	}
 	
+	/**
+	 * Step.
+	 *
+	 * @param number the step number
+	 */
+	protected void step(int number1, int number2){
+		logger.step(number1,number2);	
+	}
+	
 	
 }

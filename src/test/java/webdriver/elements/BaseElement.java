@@ -90,9 +90,13 @@ abstract class BaseElement extends BaseEntity implements Element {
 		Assert.assertTrue(element.isDisplayed(), "is absent");
 	}
 	
-
+	public boolean isPresent(By locator) {
+		this.locator = locator;
+		return isPresent(0);
+	}
+	
 	public boolean isPresent() {
-		return false;
+		return isPresent(0);
 	}
 	
 	/**

@@ -24,6 +24,9 @@ public class MessagePage extends BasePage{
 	@FindBy(xpath = xPathSpamMessages)
 	private Label lbSpamMessages;
 	
+	@FindBy(xpath = "//a[contains(@href,'isolated.mail.google.com' )]")
+	private Label lbLinkConfirmForward;
+	
 	public MessagePage() {
 		super(By.xpath("//div[@class='G3 G2']"), "Message Page");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
@@ -40,7 +43,14 @@ public class MessagePage extends BasePage{
 		lbNotSpam.click();
 		lbSpamMessages.waitForIsElementPresent(By.xpath(xPathSpamMessages));
 	}
-	
+
+	public void confirmForward() {
+		String windowHandle = browser.getWebDriver().getWindowHandle();
+		lbLinkConfirmForward.click();
+		browser.closeWindowsExcept(windowHandle);
+		
+	}
+
 	
 
 }

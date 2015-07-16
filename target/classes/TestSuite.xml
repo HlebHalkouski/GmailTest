@@ -3,10 +3,12 @@
 	<test name="Functional Tests" preserve-order="true">
 		<parameter name="username1" value="hlebtemp@gmail.com"/>
 		<parameter name="username2" value="hlebtemp2@gmail.com"/>
+		<parameter name="username3" value="hleb3temp@gmail.com"/>
 		<parameter name="password1" value="dr71gleb"/>
 		<parameter name="password2" value="dr71gleb"/>
+		<parameter name="password3" value="dr71gleb"/>
 		<classes>
-			<class name="test.LetterGoToSpam_01" />
+			<class name="test.Forward_02" />
         </classes>
 	</test>
 </suite>

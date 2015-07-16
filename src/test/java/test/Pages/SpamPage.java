@@ -11,7 +11,7 @@ public class SpamPage extends MainPage {
 		super(By.xpath("//div[@class='ya']"), "Spam Page");
 	}
 
-	public boolean isLetterInSpam(String username, Letter letterUser) {
+	public boolean isLetterInFolder(String username, Letter letterUser) {
 		lbLetter = new LabelElement(By.xpath(String.format(xPathLetter , username, letterUser.getTimeSend())));
 		return lbLetter.isPresent();
 	}

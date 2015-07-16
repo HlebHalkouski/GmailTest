@@ -12,20 +12,8 @@ public final class Logger {
 	private static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Logger.class);
 	private static Logger instance = null;
 
-	/**
-	 * local info
-	 * 
-	 * @param msg
-	 *            Message
-	 */
-	public void infoLoc(final String message) {
-		logger.info(message);
-		Reporter.log(message + "<br>");
-	}
+	
 
-	/**
-	 * Constructor
-	 */
 	private Logger() {
 	}
 
@@ -49,6 +37,17 @@ public final class Logger {
 	 */
 	public void step(final int step) {
 		logDelimMsg("step " + String.valueOf(step));
+	}
+	
+	
+	/**
+	 *  Logging a step number
+	 *
+	 * @param step1 - from step number
+	 * @param step2 - to step number
+	 */
+	public void step(final int step1, final int step2) {
+		logDelimMsg(String.format("steps: %s-%s", String.valueOf(step1) , String.valueOf(step2)));
 	}
 
 	/**

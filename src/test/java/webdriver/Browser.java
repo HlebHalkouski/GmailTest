@@ -1,5 +1,6 @@
 package webdriver;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Cookie;
@@ -135,6 +136,21 @@ public class Browser {
 			driver.navigate().refresh();
 		} while (driver.manage().getCookieNamed("LSID") != null);
 
+	}
+
+	/**
+	 * Close windows except parentPage.
+	 *
+	 * @param windowHandle the window parentPage
+	 */
+	public void closeWindowsExcept(String windowHandle) {
+		 Set<String> Handles = driver.getWindowHandles();
+		  for(String newHandle : Handles)
+		   if(!newHandle.equals(windowHandle)){
+			   driver.switchTo().window(newHandle);
+			   driver.close();
+		   }
+		  driver.switchTo().window(windowHandle);
 	}
 	
 	

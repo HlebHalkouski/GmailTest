@@ -14,9 +14,9 @@ public class Asserts extends BaseEntity {
 	 */
 	public void assertTrue(final Boolean isTrue, final String passMsg, final String failMsg) {
 		if (isTrue)
-			info(passMsg);
+			info("Assert true: " + passMsg);
 		else
-			fatal(failMsg);
+			fatal("Assert fail:" + failMsg);
 
 	}
 

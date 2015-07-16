@@ -15,7 +15,7 @@ public abstract class BaseTest extends BaseEntity {
 	
 	@BeforeTest
 	public void startTest(){
-		Logger.getInstance().logTestName(this.getClass().getName());
+		Logger.getInstance().logTestName(this.getClass().getSimpleName());
 	}
 	
 }

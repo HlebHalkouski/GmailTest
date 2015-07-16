@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Fun Test Plan]">
+  <parameter name="password3" value="dr71gleb"/>
+  <parameter name="username3" value="hleb3temp@gmail.com"/>
   <parameter name="password2" value="dr71gleb"/>
   <parameter name="username2" value="hlebtemp2@gmail.com"/>
   <parameter name="password1" value="dr71gleb"/>
   <parameter name="username1" value="hlebtemp@gmail.com"/>
   <test name="Functional Tests(failed)">
+    <parameter name="password3" value="dr71gleb"/>
+    <parameter name="username3" value="hleb3temp@gmail.com"/>
     <parameter name="password2" value="dr71gleb"/>
     <parameter name="username2" value="hlebtemp2@gmail.com"/>
     <parameter name="password1" value="dr71gleb"/>
     <parameter name="username1" value="hlebtemp@gmail.com"/>
     <classes>
-      <class name="test.LetterGoToSpam_01">
+      <class name="test.Forward_02">
         <methods>
-          <include name="afterSpamTest"/>
-          <include name="beforeSpamTest"/>
+          <include name="afterForwardTest"/>
+          <include name="ForwardTest"/>
           <include name="before"/>
+          <include name="beforForwardTest"/>
           <include name="startTest"/>
           <include name="after"/>
-          <include name="letterGoToSpam"/>
         </methods>
-      </class> <!-- test.LetterGoToSpam_01 -->
+      </class> <!-- test.Forward_02 -->
     </classes>
   </test> <!-- Functional Tests(failed) -->
 </suite> <!-- Failed suite [Fun Test Plan] -->

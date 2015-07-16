@@ -7,8 +7,8 @@ import java.util.GregorianCalendar;
 
 public class Letter {
 
-	private String theme;
-	private String body;
+	private String theme = "";
+	private String body = "";
 	private Calendar calendar;
 	private String senderUsername;
 	
@@ -19,6 +19,11 @@ public class Letter {
 		this.senderUsername = senderUsername;
 	}
 	
+	public Letter(Calendar calendar, String forwardingNoreplyGoogleCom) {
+		this.calendar = calendar;
+		this.senderUsername = forwardingNoreplyGoogleCom;
+	}
+
 	@Override
 	public String toString() {
 		return "Message [theme=" + theme + ", body=" + body + ", calendar=" + calendar 
@@ -45,7 +50,7 @@ public class Letter {
 		return calendar;
 	}
 
-	public void setTime(GregorianCalendar calendar) {
+	public void setTime(Calendar calendar) {
 		this.calendar = calendar;
 	}
 

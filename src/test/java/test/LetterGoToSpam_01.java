@@ -27,7 +27,7 @@ public class LetterGoToSpam_01 extends BaseTest {
 	
 	//Для работоспособности теста нужно чтобы у user2 в спаме находилось 4 письма от user1
 	@Test
-	public void letterGoToSpam() {
+	public void letterGoToSpamTest() {
 
 		step(1);
 		steps.loginGmail(username1, password1);
@@ -64,7 +64,7 @@ public class LetterGoToSpam_01 extends BaseTest {
 	
 	@AfterTest
 	public void afterSpamTest(){
-		steps.returnMessageFromSpam(username1, messageUser1);
+		steps.returnMessageFromSpam(messageUser1);
 	}
 
 }
