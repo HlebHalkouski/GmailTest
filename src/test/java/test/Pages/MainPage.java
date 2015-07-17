@@ -15,7 +15,9 @@ public class MainPage extends BasePage{
 
 	protected static final String URL_TRASH = "https://mail.google.com/mail/u/1/#trash";
 	protected static final String xpathAlertBigFile = "//div[@class='Kj-JD-K7 Kj-JD-K7-GIHV4']";
+	protected static final String xpathSettingDropDown = "//div[text()='Интерфейс:']";
 	protected Label lbAlertBigFile;
+	protected Label lbSettingDropDown;
 	
 	protected final String xPathLetter = "//*[@email='%s']/ancestor::td/following-sibling::td[@class='xY a4W']"
 			+ "//*[contains(text(),'%s')]/ancestor::td/following-sibling::td"
@@ -29,7 +31,10 @@ public class MainPage extends BasePage{
 	protected Button btnSettings;
 	
 	@FindBy(xpath = "//div[@id='ms']/div")
-	protected Label lbSettings;
+	protected Label lbSettingsSetting;
+		
+	@FindBy(xpath = "//div[@id='pbwc']/div")
+	protected Label lbSettingsTheme;
 			
 	protected MainPage(By locale, String title) {
 		super(locale, title);
@@ -53,7 +58,7 @@ public class MainPage extends BasePage{
 	
 	public boolean isLetterMarked(Letter letterWithoutAttach) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	
 	public void enterMessage(Letter letterUser) {
@@ -66,17 +71,27 @@ public class MainPage extends BasePage{
 		
 	}
 
-	public void clickLblSetting() {
-		lbSettings.click();
+	public void clickSettingSetting() {
+		lbSettingsSetting.click();
 	}
 
 	public Boolean isAlertBigFile() {
 		lbAlertBigFile = new LabelElement(By.xpath(xpathAlertBigFile));
+		lbAlertBigFile.click();
 		return lbAlertBigFile.isPresent();
 	}
 
 	public static String getUrlTrash() {
 		return URL_TRASH;
+	}
+
+	public Boolean isSettingDropDown() {
+		lbSettingDropDown = new LabelElement(By.xpath(xpathSettingDropDown));
+		return lbAlertBigFile.isPresent();
+	}
+
+	public void clickSettingsTheme() {
+		lbSettingsTheme.click();		
 	}
 
 	

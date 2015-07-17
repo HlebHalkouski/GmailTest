@@ -10,9 +10,11 @@ import test.Pages.MessagePage;
 import test.Pages.NewMessageForm;
 import test.Pages.SettingPage;
 import test.Pages.SpamPage;
+import test.Pages.ThemePage;
 import test.Pages.TrashPage;
 import webdriver.BaseEntity;
 import webdriver.utils.Letter;
+import webdriver.utils.RobotForAttachFile;
 
 public class Steps extends BaseEntity {
 
@@ -83,10 +85,26 @@ public class Steps extends BaseEntity {
 		
 	}
 
+	public void clickBtnSetting() {
+		MainPage mainPage = new MainPage();
+		mainPage.clickBtnSetting();	
+	}
+
+
+	public Boolean isSettingDropDown() {
+		MainPage mainPage = new MainPage();
+		return mainPage.isSettingDropDown();
+	}
+
+	public void enterSettingTheme() {
+		MainPage mainPage = new MainPage();	
+		mainPage.clickSettingsTheme();
+	}
+	
 	public void enterSetting() {
 		MainPage mainPage = new MainPage();
 		mainPage.clickBtnSetting();	
-		mainPage.clickLblSetting();
+		mainPage.clickSettingSetting();
 	}
 
 	public Letter setForwardToUser(String username3) {
@@ -134,6 +152,8 @@ public class Steps extends BaseEntity {
 	}
 
 	public Boolean isletterInTrash(Letter letterWithAttach) {
+		@SuppressWarnings("unused")
+		MainPage mainPage = new MainPage();
 		browser.navigate(MainPage.getUrlTrash());
 		TrashPage trashPage = new TrashPage();
 		return trashPage.isLetterInFolder(letterWithAttach);
@@ -145,15 +165,29 @@ public class Steps extends BaseEntity {
 	}
 
 	public void deleteForward() {
-		MainPage mainPage = new MainPage();
 		browser.navigate(ForwardPage.getUrlPage());
 		ForwardPage forwardPage = new ForwardPage();
 		forwardPage.deleteForward();
 		
 	}
 
-
 	
 
-		
+	public void enterUploadTheme() {
+		ThemePage themePage = new ThemePage();
+		themePage.enterUploadTheme();
+	}
+
+	
+	public void uploadThemeFile(File attachFile) {
+		RobotForAttachFile.attachFile(attachFile);		
+	}
+
+	public Boolean isAlertWrongFilePresent() {
+		browser.getWebDriver().switchTo().parentFrame();
+		ThemePage themePage = new ThemePage();
+		return themePage.isAlertWrongFilePresent();
+	}
+
+				
 }

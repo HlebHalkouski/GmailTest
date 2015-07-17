@@ -15,16 +15,15 @@
     <parameter name="password1" value="dr71gleb"/>
     <parameter name="username1" value="hlebtemp@gmail.com"/>
     <classes>
-      <class name="test.Forward_02">
+      <class name="test.Themes_04">
         <methods>
-          <include name="afterForwardTest"/>
-          <include name="ForwardTest"/>
+          <include name="ThemesTest"/>
+          <include name="beforeMainMailBoxPageTest"/>
           <include name="before"/>
-          <include name="beforForwardTest"/>
           <include name="startTest"/>
           <include name="after"/>
         </methods>
-      </class> <!-- test.Forward_02 -->
+      </class> <!-- test.Themes_04 -->
     </classes>
   </test> <!-- Functional Tests(failed) -->
 </suite> <!-- Failed suite [Fun Test Plan] -->

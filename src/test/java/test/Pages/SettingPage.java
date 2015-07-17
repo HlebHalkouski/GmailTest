@@ -11,10 +11,11 @@ import webdriver.fieldDecorator.FieldDecorator;
 public class SettingPage extends BasePage {
 	
 	
+	
 	@FindBy(xpath = "//a[contains(text(),'Пересылка и POP/IMAP')]")
 	private Label lbForwardSetting;
-	
-	
+
+		
 	public SettingPage() {
 		super(By.xpath("//h2[contains(text(),'Настройки')]"), "Setting Page");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);	
@@ -23,6 +24,7 @@ public class SettingPage extends BasePage {
 	public void enterForwardSetting() {
 		lbForwardSetting.click();
 	}
+
 	
 	
 }

@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Fun_Test_Plan">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fun_Test_Plan" title="test.Forward_02" hash-for-method="ForwardTest">ForwardTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Fun_Test_Plan" title="test.Themes_04" hash-for-method="ThemesTest">ThemesTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Fun_Test_Plan -->
@@ -119,69 +119,20 @@
           <div class="suite-Fun_Test_Plan-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">test.Forward_02</span>
+              <span class="class-name">test.Themes_04</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ForwardTest">
-                  </a> <!-- ForwardTest -->
-                  <span class="method-name">ForwardTest</span>
-                  <div class="stack-trace">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
-System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:49)
-	at com.google.common.collect.Iterators$8.transform(Iterators.java:799)
-	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:48)
-	at com.google.common.collect.Iterators.addAll(Iterators.java:362)
-	at com.google.common.collect.Lists.newArrayList(Lists.java:160)
-	at com.google.common.collect.Lists.newArrayList(Lists.java:144)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:510)
-	at webdriver.elements.BaseElement.pickElementRed(BaseElement.java:53)
-	at webdriver.elements.BaseElement.click(BaseElement.java:47)
-	at test.Pages.ForwardPage.addForwardUser(ForwardPage.java:111)
-	at test.Steps.Steps.setForwardToUser(Steps.java:96)
-	at test.Forward_02.ForwardTest(Forward_02.java:56)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
-	... 43 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 58 more
-... Removed 24 stack frames
+                  <a name="ThemesTest">
+                  </a> <!-- ThemesTest -->
+                  <span class="method-name">ThemesTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: Assert fail:Setting Drop Down isn&apos;t visible expected [true] but found [false]
+	at webdriver.Logger.fatal(Logger.java:130)
+	at webdriver.BaseEntity.fatal(BaseEntity.java:72)
+	at webdriver.Asserts.assertTrue(Asserts.java:19)
+	at test.Themes_04.ThemesTest(Themes_04.java:30)
+... Removed 27 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -205,7 +156,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
     &lt;parameter name=&quot;password1&quot; value=&quot;dr71gleb&quot;/&gt;
     &lt;parameter name=&quot;username1&quot; value=&quot;hlebtemp@gmail.com&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;test.Forward_02&quot;/&gt;
+      &lt;class name=&quot;test.Themes_04&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Functional Tests --&gt;
 &lt;/suite&gt; &lt;!-- Fun Test Plan --&gt;
@@ -247,14 +198,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ForwardTest')
-data.setCell(0, 2, 'test.Forward_02')
-data.setCell(0, 3, 33448);
+data.setCell(0, 1, 'ThemesTest')
+data.setCell(0, 2, 'test.Themes_04')
+data.setCell(0, 3, 8595);
 window.suiteTableData['Fun_Test_Plan']= { tableData: data, tableDiv: 'times-div-Fun_Test_Plan'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 33 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Fun_Test_Plan">
               </div> <!-- times-div-Fun_Test_Plan -->
             </div> <!-- times-div -->
@@ -266,26 +217,19 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">ForwardTest</span>
+              <span class="reporter-method-name">ThemesTest</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">--------==[ step 1 ]==--------<br></span>
-                <span class="reporter-method-output">Page Login Page appears<br></span>
-                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
-                <span class="reporter-method-output">ButtonElement clicking <br></span>
-                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
-                <span class="reporter-method-output">ButtonElement clicking <br></span>
-                <span class="reporter-method-output">--------==[ steps: 2-3 ]==--------<br></span>
                 <span class="reporter-method-output">Page Main Page appears<br></span>
                 <span class="reporter-method-output">ButtonElement clicking <br></span>
-                <span class="reporter-method-output">LabelElement clicking <br></span>
-                <span class="reporter-method-output">--------==[ steps: 4-5 ]==--------<br></span>
-                <span class="reporter-method-output">Page Setting Page appears<br></span>
-                <span class="reporter-method-output">LabelElement clicking <br></span>
-                <span class="reporter-method-output">Page ForwardPage appears<br></span>
-                <span class="reporter-method-output">ButtonElement clicking <br></span>
-                <span class="reporter-method-output">TextBoxElement typing 'hleb3temp@gmail.com' <br></span>
-                <span class="reporter-method-output">ButtonElement clicking <br></span>
-                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">Page Main Page appears<br></span>
+                <span class="reporter-method-output"><div class="skipped">LabelElement Timed out after 0 seconds waiting for webdriver.elements.BaseElement$1@4b2c5e02
+Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
+System info: host: 'EPBYMINW2701', ip: '10.6.102.41', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=35.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 434834f7-fc57-43a5-a21e-42feeab962e0 </div><br></span>
+                <span class="reporter-method-output"><div class="failedConfig">Assert fail:Setting Drop Down isn't visible</div><br></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -303,35 +247,29 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.Forward_02</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.Themes_04</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">startTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
-                <span class="method-name">beforForwardTest(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb, hleb3temp@gmail.com, dr71gleb)</span>
-                <span class="method-start">15 ms</span>
+                <span class="method-name">beforeMainMailBoxPageTest(hlebtemp@gmail.com, dr71gleb)</span>
+                <span class="method-start">12 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
-                <span class="method-start">26 ms</span>
+                <span class="method-start">2594 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">ForwardTest</span>
-                <span class="method-start">30 ms</span>
+                <span class="method-name">ThemesTest</span>
+                <span class="method-start">2599 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">33495 ms</span>
+                <span class="method-start">11222 ms</span>
               </div> <!-- configuration-class after -->
-              <div class="configuration-test after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">afterForwardTest</span>
-                <span class="method-start">34924 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

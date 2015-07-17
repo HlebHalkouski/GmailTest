@@ -1,6 +1,5 @@
 package test.Pages;
 
-import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.util.GregorianCalendar;
 
@@ -103,8 +102,7 @@ public class NewMessageForm extends BasePage {
 	}
 
 	public void chooseAttachFile(File attachFile) {
-		StringSelection  pathToFile = new StringSelection(attachFile.getAbsolutePath());
-		RobotForAttachFile.attachFile(pathToFile);
+		RobotForAttachFile.attachFile(attachFile);
 		lbLinkAttachFile.waitForIsElementPresent(By.xpath(xPathLinkAttachFile));
 				
 	}
