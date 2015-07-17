@@ -2,6 +2,8 @@ package webdriver.fieldDecorator;
 
 import org.openqa.selenium.WebElement;
 
+import webdriver.Logger;
+
 public class ContainerFactory implements IContainerFactory {
 
     public <C extends Container> C create(final Class<C> containerClass, final WebElement wrappedElement) {
@@ -14,8 +16,10 @@ public class ContainerFactory implements IContainerFactory {
         try {
             return containerClass.newInstance();
         } catch (InstantiationException e) {
+        	Logger.getInstance().warn(containerClass.getSimpleName() + " " + e);
             throw new RuntimeException(e);
         } catch (IllegalAccessException e) {
+        	Logger.getInstance().warn(containerClass.getSimpleName() + " " + e);
             throw new RuntimeException(e);
         }
     }

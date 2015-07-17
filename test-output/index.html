@@ -146,12 +146,12 @@ Driver info: driver.version: RemoteWebDriver
 	at com.google.common.collect.Lists.newArrayList(Lists.java:160)
 	at com.google.common.collect.Lists.newArrayList(Lists.java:144)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:510)
-	at webdriver.elements.BaseElement.pickElementRed(BaseElement.java:47)
-	at webdriver.elements.BaseElement.click(BaseElement.java:41)
-	at test.Pages.ForwardPage.addForwardUser(ForwardPage.java:83)
-	at test.Steps.Steps.setForwardToUser(Steps.java:95)
+	at webdriver.elements.BaseElement.pickElementRed(BaseElement.java:53)
+	at webdriver.elements.BaseElement.click(BaseElement.java:47)
+	at test.Pages.ForwardPage.addForwardUser(ForwardPage.java:111)
+	at test.Steps.Steps.setForwardToUser(Steps.java:96)
 	at test.Forward_02.ForwardTest(Forward_02.java:56)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7059 [/127.0.0.1] failed: Connection refused: connect
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
 	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
 	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
@@ -249,12 +249,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'ForwardTest')
 data.setCell(0, 2, 'test.Forward_02')
-data.setCell(0, 3, 28613);
+data.setCell(0, 3, 33448);
 window.suiteTableData['Fun_Test_Plan']= { tableData: data, tableDiv: 'times-div-Fun_Test_Plan'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 28 seconds</span>
+              <span class="suite-total-time">Total running time: 33 seconds</span>
               <div id="times-div-Fun_Test_Plan">
               </div> <!-- times-div-Fun_Test_Plan -->
             </div> <!-- times-div -->
@@ -310,25 +310,27 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">beforForwardTest(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb, hleb3temp@gmail.com, dr71gleb)</span>
-                <span class="method-start">13 ms</span>
+                <span class="method-start">15 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
-                <span class="method-start">22 ms</span>
+                <span class="method-start">26 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">ForwardTest</span>
-                <span class="method-start">26 ms</span>
+                <span class="method-start">30 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">28707 ms</span>
+                <span class="method-start">33495 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">afterForwardTest</span>
-                <span class="method-start">31117 ms</span>
+                <span class="method-start">34924 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

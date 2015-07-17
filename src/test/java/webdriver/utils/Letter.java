@@ -2,7 +2,6 @@ package webdriver.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 
 public class Letter {
@@ -17,11 +16,6 @@ public class Letter {
 		this.body = body;
 		this.calendar = calendar;
 		this.senderUsername = senderUsername;
-	}
-	
-	public Letter(Calendar calendar, String forwardingNoreplyGoogleCom) {
-		this.calendar = calendar;
-		this.senderUsername = forwardingNoreplyGoogleCom;
 	}
 
 	@Override
@@ -63,8 +57,43 @@ public class Letter {
 	}
 
 	public String getTimeSend() {
-		return new SimpleDateFormat("HH:mm")
+		@SuppressWarnings("deprecation")
+		String month = getMonthByNumber(calendar.getTime().getMonth());
+		String dateSend = new SimpleDateFormat("dd $ yyyy г., HH:mm")
 				.format(calendar.getTime());
+		return dateSend.replace("$", month);
+	};
+
+	private String getMonthByNumber(int month) {
+		switch(month){
+		case 0:
+			return "января";
+		case 1:
+			return "февраля";
+		case 2:
+			return "марта";
+		case 3:
+			return "апреля";
+		case 4:
+			return "мая";
+		case 5:
+			return "июня";
+		case 6:
+			return "июля";
+		case 7:
+			return "августа";
+		case 8:
+			return "сентября";
+		case 9:
+			return "октября";
+		case 10:
+			return "ноября";
+		case 11:
+			return "декабря";
+		}
+		return " ";
 	}
+
+	
 	
 }

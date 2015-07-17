@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -28,7 +29,12 @@ abstract class BaseElement extends BaseEntity implements Element {
     
     public BaseElement(By locator) {
 		this.locator = locator;
+		try{
     	this.element = browser.getWebDriver().findElement(locator);
+		}catch(NoSuchElementException e ){
+			warn(e.toString());
+			throw new RuntimeException(e);
+		}
 	}
 
     

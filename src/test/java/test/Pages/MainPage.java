@@ -13,11 +13,13 @@ import webdriver.utils.Letter;
 
 public class MainPage extends BasePage{
 
-	private static final String URL_TRASH = "https://mail.google.com/mail/u/1/#trash";
-	private static final String xpathAlertBigFile = "//div[@class='Kj-JD-K7 Kj-JD-K7-GIHV4']";
-	private Label lbAlertBigFile;
+	protected static final String URL_TRASH = "https://mail.google.com/mail/u/1/#trash";
+	protected static final String xpathAlertBigFile = "//div[@class='Kj-JD-K7 Kj-JD-K7-GIHV4']";
+	protected Label lbAlertBigFile;
 	
-	protected String xPathLetter = "//*[@email='%s']/ancestor::td/following-sibling::td//b[contains(text(), '%s')]";
+	protected final String xPathLetter = "//*[@email='%s']/ancestor::td/following-sibling::td[@class='xY a4W']"
+			+ "//*[contains(text(),'%s')]/ancestor::td/following-sibling::td"
+			+ "//span[@aria-label='%s']";
 	protected Label lbLetter;
 	
 	@FindBy(xpath = "//div[text()='НАПИСАТЬ']")
@@ -28,11 +30,7 @@ public class MainPage extends BasePage{
 	
 	@FindBy(xpath = "//div[@id='ms']/div")
 	protected Label lbSettings;
-		
-	
-	
-
-	
+			
 	protected MainPage(By locale, String title) {
 		super(locale, title);
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
@@ -48,7 +46,8 @@ public class MainPage extends BasePage{
 	}
 
 	public boolean isLetterInFolder(Letter letterUser) {
-		lbLetter = new LabelElement(By.xpath(String.format(xPathLetter , letterUser.getSenderUsername(), letterUser.getTimeSend())));
+		System.out.println(String.format(xPathLetter , letterUser.getSenderUsername(), letterUser.getTheme(), letterUser.getTimeSend()));
+		lbLetter = new LabelElement(By.xpath(String.format(xPathLetter , letterUser.getSenderUsername(),  letterUser.getTheme(), letterUser.getTimeSend())));
 		return lbLetter.isPresent();
 	}	
 	
@@ -57,8 +56,8 @@ public class MainPage extends BasePage{
 		return false;
 	}
 	
-	public void enterMessage(Letter messageUser) {
-		lbLetter = new LabelElement(By.xpath(String.format(xPathLetter , messageUser.getSenderUsername(), messageUser.getTimeSend())));
+	public void enterMessage(Letter letterUser) {
+		lbLetter = new LabelElement(By.xpath(String.format(xPathLetter , letterUser.getSenderUsername(), letterUser.getTheme(), letterUser.getTimeSend())));
 		lbLetter.click();
 	}
 

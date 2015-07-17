@@ -10,6 +10,7 @@ import test.Pages.MessagePage;
 import test.Pages.NewMessageForm;
 import test.Pages.SettingPage;
 import test.Pages.SpamPage;
+import test.Pages.TrashPage;
 import webdriver.BaseEntity;
 import webdriver.utils.Letter;
 
@@ -133,17 +134,18 @@ public class Steps extends BaseEntity {
 	}
 
 	public Boolean isletterInTrash(Letter letterWithAttach) {
-		MainPage mainPage = new MainPage();
 		browser.navigate(MainPage.getUrlTrash());
-		return mainPage.isLetterInFolder(letterWithAttach);
+		TrashPage trashPage = new TrashPage();
+		return trashPage.isLetterInFolder(letterWithAttach);
 	}
 
 	public Boolean isletterInInboxAndMarked(Letter letterWithoutAttach) {
 		MainPage mainPage = new MainPage();
-		return mainPage.isLetterInFolder(letterWithoutAttach) && mainPage.isLetterMarked(letterWithoutAttach);
+		return mainPage.isLetterInFolder(letterWithoutAttach);
 	}
 
 	public void deleteForward() {
+		MainPage mainPage = new MainPage();
 		browser.navigate(ForwardPage.getUrlPage());
 		ForwardPage forwardPage = new ForwardPage();
 		forwardPage.deleteForward();

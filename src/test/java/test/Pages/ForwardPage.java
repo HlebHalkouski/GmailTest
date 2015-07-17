@@ -1,5 +1,8 @@
 package test.Pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.GregorianCalendar;
 import java.util.Set;
 
@@ -17,9 +20,11 @@ import webdriver.utils.Letter;
 
 public class ForwardPage extends BasePage {
 
-	private static final String FORWARDING_NOREPLY_GOOGLE_COM = "forwarding-noreply@google.com";
+	private static final String FORWARDING__GOOGLE = "forwarding-noreply@google.com";
 	private static final String URL_FORWARD_PAGE = "https://mail.google.com/mail/u/0/#settings/fwdandpop";
-		
+	private static final String FORWARDING_THEME = "Подтверждение пересылки Gmail";
+	private static final String FORWARDING_BODY = "";	
+	
 	@FindBy(xpath = "//input[@act='add']")
 	private Button btnAddForward;
 	
@@ -69,19 +74,20 @@ public class ForwardPage extends BasePage {
 	@FindBy(xpath = ".//option[contains(text(),'(используется)')]/..")
 	private Label lbSelectForward;
 	
-	@FindBy(xpath = ".//option[contains(text(),'Удалить')]")
+	private final String xPathDeleteOptoinForward = "//option[contains(text(),'Удалить')]";
+	@FindBy(xpath = xPathDeleteOptoinForward)
 	private Label lbDeleteOptionForward;
 	
-	private final String xPathAlertFilterDelete = "//span[contains(text(),'Адрес пересылки')]";
+	private final String xPathAlertFilterDelete = "//*[contains(text(),'Адрес пересылки')]";
 	@FindBy(xpath = xPathAlertFilterDelete)
 	private Label lbAlertFilterDelete;
 	
 	@FindBy(xpath = "//span[@class='e kK7Ibd']")
 	private Label lbForwardSetting;
 	
-	private final String xPathAlertLoading = "//*[contains(text(),'Загрузка')]";
-	@FindBy(xpath = xPathAlertLoading)
-	private Label lbLoading;
+	private final String xPathFilterMessages = "//div[@class='ae4 UI'][@gh='tl']";
+	@FindBy(xpath = xPathFilterMessages)
+	private Label lbFilterMessages;
 	
 
 	
@@ -107,7 +113,7 @@ public class ForwardPage extends BasePage {
 		browser.getWebDriver().switchTo().window(windowHandle);
 		btnForwardOk.click();
 		
-		return new Letter(GregorianCalendar.getInstance(), FORWARDING_NOREPLY_GOOGLE_COM);
+		return new Letter(FORWARDING_THEME, FORWARDING_BODY, GregorianCalendar.getInstance(), FORWARDING__GOOGLE);
 	}
 
 	public static String getUrlPage() {
@@ -125,15 +131,13 @@ public class ForwardPage extends BasePage {
 	}
 
 	public void setFilterSettings(String username) {
-		boolean visible;
 		txbFilterFrom.type(username);
 		lbCheckBoxFile.click();
 		lbCreateNextFilter.click();
 		
-		do{
-			visible = lbLoading.isPresent(By.xpath(xPathAlertLoading));
-		}while(visible);
+		lbFilterMessages.waitForIsElementPresent(By.xpath(xPathFilterMessages));
 		lbCheckBoxDeleteIt.click();
+		
 		lbCheckBoxMarkImporpant.click();
 		btnCreateFilter.click();
 		lbAlertFilterCreate.waitForIsElementPresent(By.xpath(xPathAlertFilterCreate));
@@ -141,11 +145,17 @@ public class ForwardPage extends BasePage {
 
 	public void deleteForward() {
 		lbSelectForward.click();
-		lbDeleteOptionForward.click();//TODO
-		lbDeleteOptionForward.click();
+		try {
+			Robot robot;
+			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyPress(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
 		btnForwardOk.click();
 		lbAlertFilterDelete.waitForIsElementPresent(By.xpath(xPathAlertFilterDelete));
 	}
-
 	
 }

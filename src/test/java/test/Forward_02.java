@@ -92,7 +92,7 @@ public class Forward_02 extends BaseTest{
 		
 		step(18);
 		browser.navigate(Browser.getBaseUrl());
-		Assert.assertTrue(steps.isletterInInboxAndMarked(letterWithoutAttach), "Letter with attach in inbox!", "Letter with attach isn't inbox!");
+		Assert.assertTrue(steps.isletterInInboxAndMarked(letterWithoutAttach), "Letter without attach in inbox!", "Letter without attach isn't inbox!");
 		
 		browser.deleteAllCookiesAndRefresh();
 		
@@ -100,7 +100,7 @@ public class Forward_02 extends BaseTest{
 		steps.loginGmail(username3, password3);
 		
 		step(20);
-		Assert.assertTrue(steps.isletterInInboxAndMarked(letterWithoutAttach), "Letter with attach in inbox!", "Letter with attach isn't inbox!");
+		Assert.assertTrue(steps.isletterInInboxAndMarked(letterWithoutAttach), "Letter without attach in inbox!", "Letter without attach isn't inbox!");
 		
 	}
 	
