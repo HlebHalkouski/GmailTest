@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Functional Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 17 19:58:31 MSK 2015</td>
+<td>Started on:</td><td>Fri Jul 17 20:50:36 MSK 2015</td>
 </tr>
-<tr><td>Total time:</td><td>12 seconds (12465 ms)</td>
+<tr><td>Total time:</td><td>31 seconds (31237 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,64 +76,30 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='test.Themes_04.ThemesTest()'><b>ThemesTest</b><br>Test class: test.Themes_04<br/>
-<a href="#Output-193388045" onClick='toggleBox("Output-193388045", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-2112233878" onClick='toggleBox("Output-2112233878", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-193388045" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-193388045">
+<a href="#Output-2112233878" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2112233878">
 --------==[ step 1 ]==--------<br><br/>
 Page Main Page appears<br><br/>
 ButtonElement clicking <br><br/>
+--------==[ step 2 ]==--------<br><br/>
 Page Main Page appears<br><br/>
-<div class="skipped">LabelElement Timed out after 0 seconds waiting for webdriver.elements.BaseElement$1@4b2c5e02
-Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
-System info: host: 'EPBYMINW2701', ip: '10.6.102.41', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=35.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 434834f7-fc57-43a5-a21e-42feeab962e0 </div><br><br/>
-<div class="failedConfig">Assert fail:Setting Drop Down isn't visible</div><br><br/>
+LabelElement clicking <br><br/>
+--------==[ step 5 ]==--------<br><br/>
+Page Theme Page appears<br><br/>
+ButtonElement clicking <br><br/>
+ButtonElement clicking <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ step 6 ]==--------<br><br/>
+Uploading file: C:\Users\Hleb_Halkouski\git\GmailTest\RandomFile.txt<br><br/>
+Page Theme Page appears<br><br/>
+Assert true: Upload error is present<br><br/>
 </div>
 </td>
-<td><div><pre>java.lang.AssertionError: Assert fail:Setting Drop Down isn&apos;t visible expected [true] but found [false]
-	at webdriver.Logger.fatal(Logger.java:130)
-	at webdriver.BaseEntity.fatal(BaseEntity.java:72)
-	at webdriver.Asserts.assertTrue(Asserts.java:19)
-	at test.Themes_04.ThemesTest(Themes_04.java:30)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace193388045", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace193388045'><pre>java.lang.AssertionError: Assert fail:Setting Drop Down isn&apos;t visible expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at webdriver.Logger.fatal(Logger.java:130)
-	at webdriver.BaseEntity.fatal(BaseEntity.java:72)
-	at webdriver.Asserts.assertTrue(Asserts.java:19)
-	at test.Themes_04.ThemesTest(Themes_04.java:30)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div></td>
-<td>8</td>
-<td>test.Themes_04@45d84a20</td></tr>
+<td></td>
+<td>25</td>
+<td>test.Themes_04@4bdeaabb</td></tr>
 </table><p>
 </body>
 </html>
