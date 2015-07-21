@@ -35,7 +35,22 @@ public class MainPage extends BasePage{
 		
 	@FindBy(xpath = "//div[@id='pbwc']/div")
 	protected Label lbSettingsTheme;
-			
+	
+	@FindBy(xpath = "//a[@class='J-Ke n0 aBU']")
+	protected Label lbInbox;
+	
+	@FindBy(xpath = "(//table[@class='F cf zt']//td[@class='oZ-x3 xY'])[1]")
+	protected Label lbSelectTopMessage;
+	
+	@FindBy(xpath = "//*[@*='В спам!']")
+	protected Button btnMarkAsSpam;
+		
+	protected final String xPathSendersEmail = "(//table[@class='F cf zt']//div[@class='yW']/span)";
+	protected static final String SENDER_TIME_ATRIBUTE = "aria-label";
+	protected static final String SENDER_EMAIL_ATRIBUTE = "email";
+	protected static final String xPathSendersTheme = "(//table[@class='F cf zt']//div[@class='y6']/span[1])";
+	protected static final String xPathSendersTime = "(//table[@class='F cf zt']//td[@class='xW xY ']/span)";
+	
 	protected MainPage(By locale, String title) {
 		super(locale, title);
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
@@ -51,15 +66,10 @@ public class MainPage extends BasePage{
 	}
 
 	public boolean isLetterInFolder(Letter letterUser) {
-		System.out.println(String.format(xPathLetter , letterUser.getSenderUsername(), letterUser.getTheme(), letterUser.getTimeSend()));
 		lbLetter = new LabelElement(By.xpath(String.format(xPathLetter , letterUser.getSenderUsername(),  letterUser.getTheme(), letterUser.getTimeSend())));
 		return lbLetter.isPresent();
 	}	
 	
-	public boolean isLetterMarked(Letter letterWithoutAttach) {
-		// TODO Auto-generated method stub
-		return true;
-	}
 	
 	public void enterMessage(Letter letterUser) {
 		lbLetter = new LabelElement(By.xpath(String.format(xPathLetter , letterUser.getSenderUsername(), letterUser.getTheme(), letterUser.getTimeSend())));
@@ -94,6 +104,23 @@ public class MainPage extends BasePage{
 		lbSettingsTheme.click();		
 	}
 
+	public Letter selectTopMessage() {
+		lbSelectTopMessage.click();
+		String senderName = new LabelElement(By.xpath(xPathSendersEmail + "[1]")).getElement().getAttribute(SENDER_EMAIL_ATRIBUTE);
+		String senderTheme = new LabelElement(By.xpath(xPathSendersTheme + "[1]")).getElement().getText();
+		String senderTime = new LabelElement(By.xpath(xPathSendersTime  +"[1]")).getElement().getAttribute(SENDER_TIME_ATRIBUTE);
+		return new Letter(senderTheme, "" , senderTime, senderName);
+	}
+
+	public void markSelectedMessageAsSpam() {
+		btnMarkAsSpam.click();
+	}
+
+	public Boolean isLetterIsNotFolder(Letter markedLetter) {
+		return !lbLetter.isPresent(By.xpath(String.format(xPathLetter , markedLetter.getSenderUsername(),  markedLetter.getTheme(), markedLetter.getTimeSend())));
+	}
+
+	
 	
 
 }

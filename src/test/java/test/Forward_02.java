@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import webdriver.BaseTest;
 import webdriver.Browser;
 import webdriver.utils.Letter;
-import webdriver.utils.RandomFile;
+import webdriver.utils.RandomUtil;
 
 public class Forward_02 extends BaseTest{
 
@@ -40,7 +40,7 @@ public class Forward_02 extends BaseTest{
 		this.password2 = password2;
 		this.password3 = password3;
 		
-		this.attachFile = RandomFile.getFile(SIZE_ATTACH_FILE);		
+		this.attachFile = RandomUtil.getFile(SIZE_ATTACH_FILE);		
 	}
 	
 	@Test
@@ -92,7 +92,7 @@ public class Forward_02 extends BaseTest{
 		
 		step(18);
 		browser.navigate(Browser.getBaseUrl());
-		Assert.assertTrue(steps.isletterInInboxAndMarked(letterWithoutAttach), "Letter without attach in inbox!", "Letter without attach isn't inbox!");
+		Assert.assertTrue(steps.isletterInInbox(letterWithoutAttach), "Letter without attach in inbox!", "Letter without attach isn't inbox!");
 		
 		browser.deleteAllCookiesAndRefresh();
 		
@@ -100,7 +100,7 @@ public class Forward_02 extends BaseTest{
 		steps.loginGmail(username3, password3);
 		
 		step(20);
-		Assert.assertTrue(steps.isletterInInboxAndMarked(letterWithoutAttach), "Letter without attach in inbox!", "Letter without attach isn't inbox!");
+		Assert.assertTrue(steps.isletterInInbox(letterWithoutAttach), "Letter without attach in inbox!", "Letter without attach isn't inbox!");
 		
 	}
 	

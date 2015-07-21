@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 
 import webdriver.elements.interfaces.TextBox;
 
-class TextBoxElement extends BaseElement implements TextBox {
+public class TextBoxElement extends BaseElement implements TextBox {
     protected TextBoxElement(final WebElement wrappedElement) {
         super(wrappedElement);
     }

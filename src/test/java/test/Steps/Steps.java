@@ -1,6 +1,7 @@
 package test.Steps;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import test.Pages.ForwardPage;
@@ -60,7 +61,7 @@ public class Steps extends BaseEntity {
 
 	
 	
-	public void markLetterAsSpam(String username, Letter letterUser) {
+	public void markLetterAsSpam(Letter letterUser) {
 		MainPage mainPage = new MainPage();
 		mainPage.enterMessage(letterUser);
 		MessagePage messagePage = new MessagePage();
@@ -74,7 +75,9 @@ public class Steps extends BaseEntity {
 	}
 
 	public void goToSpam() {
-		browser.navigate(MAIL_SPAM);		
+		browser.navigate(MAIL_SPAM);	
+		@SuppressWarnings("unused")
+		SpamPage spamPage = new SpamPage();
 	}
 
 	public void returnMessageFromSpam(Letter letterUser) {
@@ -159,7 +162,7 @@ public class Steps extends BaseEntity {
 		return trashPage.isLetterInFolder(letterWithAttach);
 	}
 
-	public Boolean isletterInInboxAndMarked(Letter letterWithoutAttach) {
+	public Boolean isletterInInbox(Letter letterWithoutAttach) {
 		MainPage mainPage = new MainPage();
 		return mainPage.isLetterInFolder(letterWithoutAttach);
 	}
@@ -189,5 +192,69 @@ public class Steps extends BaseEntity {
 		return themePage.isAlertWrongFilePresent();
 	}
 
+	public Letter typeMessageFields(String username1, String username2) {
+		NewMessageForm newMessageForm = new NewMessageForm();
+		Letter sendingLetter = newMessageForm.typeMessageFields(username1, username2);
+		return sendingLetter;	
+		
+	}
+
+	public void openParseEmotion() {
+		NewMessageForm newMessageForm = new NewMessageForm();
+		newMessageForm.openParseEmotion();
+	}
+
+	public Boolean isParseEmotionPresent() {
+		NewMessageForm newMessageForm = new NewMessageForm();
+		return newMessageForm.isParseEmotionPresent();
+	}
+
+	public ArrayList<String> chooseEmotionsIcons(int countIcons) {
+		NewMessageForm newMessageForm = new NewMessageForm();
+		return newMessageForm.chooseEmotionsIcons(countIcons);
+		
+	}
+
+	public Boolean isIconsInBody(ArrayList<String> listSendingIcons) {
+		NewMessageForm newMessageForm = new NewMessageForm();
+		return newMessageForm.isIconsInBody(listSendingIcons);
+	}
+
+	public void clickSendMessage() {
+		NewMessageForm newMessageForm = new NewMessageForm();
+		newMessageForm.clickSendMessage();
+	}
+
+	public void enterMessage(Letter sendingLetter) {
+		MainPage mainPage = new MainPage();
+		mainPage.enterMessage(sendingLetter);
+	}
+
+	public Boolean isIconsInLetter(ArrayList<String> listSendingIcons) {
+		MessagePage messagePage = new MessagePage();
+		return messagePage.isIconsInLetter(listSendingIcons);
+	}
+
+	public Letter selectTopMessage() {
+		MainPage mainPage = new MainPage();
+		return mainPage.selectTopMessage();
+	}
+
+	public void markSelectedMessageAsSpam() {
+		MainPage mainPage = new MainPage();
+		mainPage.markSelectedMessageAsSpam();
+	}
+
+	public Boolean isLetterIsNotFolder(Letter markedLetter) {
+		MainPage mainPage = new MainPage();
+		return mainPage.isLetterIsNotFolder(markedLetter);
+	}
+
+	public void markMessageIsNoSpam() {
+		MessagePage messagePage = new MessagePage();
+		messagePage.markMessageIsNoSpam();		
+	}
+
+	
 				
 }

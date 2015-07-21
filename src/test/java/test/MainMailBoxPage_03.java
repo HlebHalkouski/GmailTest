@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import webdriver.BaseTest;
-import webdriver.utils.RandomFile;
+import webdriver.utils.RandomUtil;
 
 public class MainMailBoxPage_03  extends BaseTest{
 	
@@ -25,7 +25,7 @@ public class MainMailBoxPage_03  extends BaseTest{
 		this.username1 = username1;
 		this.username2 = username2;
 		steps.loginGmail(username1, password1);
-		attachFile = RandomFile.getFile(SIZE_FILE_MB);
+		attachFile = RandomUtil.getFile(SIZE_FILE_MB);
 	}
 	
 	

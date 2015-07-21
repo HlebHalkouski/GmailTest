@@ -1,6 +1,7 @@
 package test.Pages;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import org.openqa.selenium.By;
@@ -8,13 +9,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import webdriver.BasePage;
+import webdriver.elements.ButtonElement;
+import webdriver.elements.LabelElement;
 import webdriver.elements.interfaces.Button;
 import webdriver.elements.interfaces.Label;
 import webdriver.elements.interfaces.TextBox;
 import webdriver.fieldDecorator.FieldDecorator;
 import webdriver.utils.Letter;
-import webdriver.utils.RandomString;
+import webdriver.utils.RandomUtil;
 import webdriver.utils.RobotForAttachFile;
+
 
 public class NewMessageForm extends BasePage {
 	
@@ -46,6 +50,18 @@ public class NewMessageForm extends BasePage {
 	@FindBy(xpath = xPathLinkAttachFile)
 	private Label lbLinkAttachFile;
 	
+	private static final String xPathParseEmotionWindow = "//div[@class='a8u']";
+	private Label ParseEmotionWindow;
+	
+	@FindBy(xpath = "//div[@class='QT aaA aMZ']")
+	private Button btnOpenParseSmile;
+	
+	@FindBy(xpath = "//button[@ title='Эмоции']")
+	private Button btnOpenParseEmotion;
+
+	private final String xPathEmotionsIcons = "//button[@string='%s']";
+	private final String xPathEmotionsIconsInBody = "//img[@goomoji='%s']";
+	
 	public NewMessageForm() {
 		super(By.xpath("//div[@role='dialog']"), "New Message Form");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);	
@@ -65,8 +81,8 @@ public class NewMessageForm extends BasePage {
 	}
 
 	public Letter typeMessageFields(String username1, String username2) {
-		String theme = RandomString.getRandomString(THEME_LENGTH);
-		String body = RandomString.getRandomString(BODY_LENGHT);
+		String theme = RandomUtil.getRandomString(THEME_LENGTH);
+		String body = RandomUtil.getRandomString(BODY_LENGHT);
 		txbAdressTo.type(username2);
 		txbTheme.type(theme);
 		txbMessageBody.type(body);
@@ -93,8 +109,8 @@ public class NewMessageForm extends BasePage {
 
 	public void enterAdresserThemeAndBodyMessage(String username2) {
 		txbAdressTo.type(username2);
-		txbTheme.type(RandomString.getRandomString(THEME_LENGTH));
-		txbMessageBody.type(RandomString.getRandomString(BODY_LENGHT));	
+		txbTheme.type(RandomUtil.getRandomString(THEME_LENGTH));
+		txbMessageBody.type(RandomUtil.getRandomString(BODY_LENGHT));	
 	}
 
 	public void clickAttachFile() {
@@ -110,6 +126,47 @@ public class NewMessageForm extends BasePage {
 	public void clickSendMessage() {
 		btnSend.click();
 		lbSendMessageLink.waitForIsElementPresent(By.id(idSendMessageLink));
+	}
+
+	public void openParseEmotion() {
+		btnOpenParseSmile.click();	
+		btnOpenParseEmotion.click();
+	}
+
+	public Boolean isParseEmotionPresent() {
+		ParseEmotionWindow = new LabelElement(By.xpath(xPathParseEmotionWindow));
+		return ParseEmotionWindow.isPresent();
+	}
+
+	/**
+	 * Choose emotions icons.
+	 * Add emotions in body message and return String numbers
+	 *
+	 * @param count the count icons
+	 * @return the array list of String numbers of icons
+	 */
+	public ArrayList<String> chooseEmotionsIcons(int count) {
+		ArrayList<String> listSeningEmotions = new ArrayList<String>();
+		
+		String iconStringNumber;
+		for(int i=0; i<count; i++){
+			iconStringNumber = RandomUtil.generateIconNumber();
+			listSeningEmotions.add(iconStringNumber);
+			new ButtonElement(By.xpath(String.format(xPathEmotionsIcons , iconStringNumber ))).click();;
+		}
+		return listSeningEmotions;
+				
+	}
+
+	public Boolean isIconsInBody(ArrayList<String> listSendingIcons) {
+		Boolean isPresents = true;
+		LabelElement lbIconsInBody;
+		for(String iconStringNumber: listSendingIcons)
+		{
+			lbIconsInBody = new LabelElement(By.xpath(String.format(xPathEmotionsIconsInBody, iconStringNumber)));
+			isPresents = lbIconsInBody.isPresent();
+		}
+		return isPresents;
 	}
 
 }

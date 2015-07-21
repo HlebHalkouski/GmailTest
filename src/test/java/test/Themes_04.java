@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import webdriver.BaseTest;
-import webdriver.utils.RandomFile;
+import webdriver.utils.RandomUtil;
 
 public class Themes_04 extends BaseTest{
 	
@@ -19,7 +19,7 @@ public class Themes_04 extends BaseTest{
 	public void beforeMainMailBoxPageTest(String username1, String password1){
 		info("Precondition: ");
 		steps.loginGmail(username1, password1);
-		attachFile = RandomFile.getFile(SIZE_ATACH_FILE);
+		attachFile = RandomUtil.getFile(SIZE_ATACH_FILE);
 	}
 
 	@Test

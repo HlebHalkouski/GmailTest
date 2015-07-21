@@ -1,10 +1,13 @@
 package test.Pages;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import webdriver.BasePage;
+import webdriver.elements.LabelElement;
 import webdriver.elements.interfaces.Button;
 import webdriver.elements.interfaces.Label;
 import webdriver.fieldDecorator.FieldDecorator;
@@ -21,6 +24,8 @@ public class MessagePage extends BasePage{
 	private Label lbNotSpam;
 	
 	private final static String xPathSpamMessages = "//span[@class='bofITb']";
+	private static final String xPathEmotionsIconsInBody = "//img[@goomoji='%s']";
+	
 	@FindBy(xpath = xPathSpamMessages)
 	private Label lbSpamMessages;
 	
@@ -49,6 +54,16 @@ public class MessagePage extends BasePage{
 		lbLinkConfirmForward.click();
 		browser.closeWindowsExcept(windowHandle);
 		
+	}
+
+	public Boolean isIconsInLetter(ArrayList<String> listSendingIcons) {
+		Boolean isPresents = true;
+		LabelElement lbIconsInBody;
+		for (String iconStringNumber : listSendingIcons) {
+			lbIconsInBody = new LabelElement(By.xpath(String.format(xPathEmotionsIconsInBody, iconStringNumber)));
+			isPresents = lbIconsInBody.isPresent();
+		}
+		return isPresents;
 	}
 
 	

@@ -41,7 +41,7 @@ public class LetterGoToSpam_01 extends BaseTest {
 		steps.loginGmail(username2, password2);
 		
 		step(4);
-		steps.markLetterAsSpam(username1, messageUser1);
+		steps.markLetterAsSpam(messageUser1);
 		
 		browser.deleteAllCookiesAndRefresh();
 		

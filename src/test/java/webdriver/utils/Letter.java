@@ -2,6 +2,7 @@ package webdriver.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class Letter {
@@ -18,6 +19,30 @@ public class Letter {
 		this.senderUsername = senderUsername;
 	}
 
+	public Letter(String senderTheme, String body, String senderTime, String senderName) {
+		this.theme = senderTheme;
+		this.body = body;
+		this.calendar = gmailTimeMessageToCalendar(senderTime);
+		this.senderUsername = senderName;
+	}
+
+	private Calendar gmailTimeMessageToCalendar(String senderTime) {
+		Calendar calendarMessage = GregorianCalendar.getInstance();
+		
+		String[] date = senderTime.split(" ");
+		int day = Integer.parseInt(date[0]);
+		int month = getNumberByMonth(date[1]);
+		int year = Integer.parseInt(date[2]);;
+		
+		String[] time = date[4].split(":");
+		int hour = Integer.parseInt(time[0]);
+		int minute  = Integer.parseInt(time[1]);
+		
+		calendarMessage.set(year, month, day, hour, minute);
+		return calendarMessage;
+	}
+
+	
 	@Override
 	public String toString() {
 		return "Message [theme=" + theme + ", body=" + body + ", calendar=" + calendar 
@@ -59,38 +84,52 @@ public class Letter {
 	public String getTimeSend() {
 		@SuppressWarnings("deprecation")
 		String month = getMonthByNumber(calendar.getTime().getMonth());
-		String dateSend = new SimpleDateFormat("dd $ yyyy г., HH:mm")
+		String dateSend = new SimpleDateFormat("d $ yyyy г., HH:mm")
 				.format(calendar.getTime());
 		return dateSend.replace("$", month);
 	};
+	
+	enum Month{
+		января(0),
+		февраля(1),
+		марта(2),
+		апреля(3),
+		мая(4),
+		июня(5),
+		июля(6), 
+		августа(7),
+		сентября(8),
+		октября(9),
+		ноября(10),
+		декабря(11);
+		
+		private int value;
 
-	private String getMonthByNumber(int month) {
-		switch(month){
-		case 0:
-			return "января";
-		case 1:
-			return "февраля";
-		case 2:
-			return "марта";
-		case 3:
-			return "апреля";
-		case 4:
-			return "мая";
-		case 5:
-			return "июня";
-		case 6:
-			return "июля";
-		case 7:
-			return "августа";
-		case 8:
-			return "сентября";
-		case 9:
-			return "октября";
-		case 10:
-			return "ноября";
-		case 11:
-			return "декабря";
+        private Month(int value) {
+                this.value = value;
+        }
+
+		public int getValue() {
+			return value;
 		}
+
+		
+	}
+	
+	private int getNumberByMonth(String string) {
+		Month[] months = Month.values();
+		for(Month month : months)
+			if(month.toString().equals(string))
+				return month.value;
+		return 0;
+	}
+
+
+	private String getMonthByNumber(int monthNumber) {
+		Month[] months = Month.values();
+		for(Month month : months)
+			if(month.value == monthNumber)
+				return month.toString();
 		return " ";
 	}
 

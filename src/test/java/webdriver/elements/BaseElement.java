@@ -29,23 +29,22 @@ abstract class BaseElement extends BaseEntity implements Element {
     
     public BaseElement(By locator) {
 		this.locator = locator;
-		try{
-    	this.element = browser.getWebDriver().findElement(locator);
-		}catch(NoSuchElementException e ){
-			warn(e.toString());
+		try {
+			this.element = browser.getWebDriver().findElement(locator);
+		} catch (NoSuchElementException e) {
+			warn(e.toString().substring(0, e.getMessage().indexOf("seconds")));
 			throw new RuntimeException(e);
 		}
 	}
-
     
     
 	/**
 	 * Click on the item.
 	 */
 	public void click() {
-		info("clicking");
 		pickElementRed();
 		element.click();
+		info("clicking");
 	};
 
     public void pickElementRed() {
@@ -128,14 +127,15 @@ abstract class BaseElement extends BaseEntity implements Element {
 				}
 			});
 		} catch (Exception e) {
-			warn(e.getMessage());
+			warn(e.getMessage().substring(0, e.getMessage().indexOf("}")));
 			return false;
 		}
 		try {
 			browser.getWebDriver().manage().timeouts().implicitlyWait(Integer.valueOf(browser.getImplicitlyWait()), TimeUnit.SECONDS);
 			return element.isDisplayed();
 		} catch (Exception e) {
-			warn(e.getMessage());
+			warn(e.getMessage().substring(0, e.getMessage().indexOf("}")));
+			
 		}
 		return false;
 	}

@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><suite name="Fun Test Plan" verbose="1">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test Plan" verbose="1">
 	
-	<test name="Functional Tests" preserve-order="true">
+	<test name="Smoke Tests" preserve-order="true">
 		<parameter name="username1" value="hlebtemp@gmail.com"/>
 		<parameter name="username2" value="hlebtemp2@gmail.com"/>
 		<parameter name="username3" value="hleb3temp@gmail.com"/>
@@ -8,7 +10,7 @@
 		<parameter name="password2" value="dr71gleb"/>
 		<parameter name="password3" value="dr71gleb"/>
 		<classes>
-			<class name="test.Themes_04" />
+			<class name="test.MarkItemAsSpam_11" />
         </classes>
 	</test>
 </suite>
