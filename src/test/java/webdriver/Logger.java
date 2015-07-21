@@ -71,7 +71,7 @@ public final class Logger {
 		String formattedName = String.format("==========  %1$s: '%2$s' ==========", "Test case",
 				testName);
 		info(formattedName);
-		
+		Reporter.log(formattedName + "<br>");
 	}
 
 

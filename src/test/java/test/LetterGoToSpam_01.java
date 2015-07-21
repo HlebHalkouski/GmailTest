@@ -63,7 +63,7 @@ public class LetterGoToSpam_01 extends BaseTest {
 		
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void afterSpamTest(){
 		info("========== Postcondition========== ");
 		Browser.getInstance().deleteAllCookiesAndRefresh();

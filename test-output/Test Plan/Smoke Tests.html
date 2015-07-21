@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Smoke Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/6</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 21 18:05:04 MSK 2015</td>
+<td>Started on:</td><td>Tue Jul 21 18:31:56 MSK 2015</td>
 </tr>
-<tr><td>Total time:</td><td>20 seconds (20615 ms)</td>
+<tr><td>Total time:</td><td>116 seconds (116035 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,556 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test.Forward_02.afterForwardTest()'><b>afterForwardTest</b><br>Test class: test.Forward_02<br/>
+<a href="#Output-1450500594" onClick='toggleBox("Output-1450500594", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1450500594" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1450500594">
+========== Postcondition========== <br><br/>
+<div class="skipped">Page timeout!</div><br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.deleteAllCookies(RemoteWebDriver.java:699)
+	at webdriver.Browser.deleteAllCookiesAndRefresh(Browser.java:135)
+	at test.Forward_02.afterForwardTest(Forward_02.java:111)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 30 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 45 more
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1450500594", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1450500594'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.deleteAllCookies(RemoteWebDriver.java:699)
+	at webdriver.Browser.deleteAllCookiesAndRefresh(Browser.java:135)
+	at test.Forward_02.afterForwardTest(Forward_02.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 30 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 45 more
+</pre></div></td>
+<td>0</td>
+<td>test.Forward_02@65f8f5ae</td></tr>
+<tr>
+<td title='test.CheckStarSelection_13.afterMainMailBoxPageTest()'><b>afterMainMailBoxPageTest</b><br>Test class: test.CheckStarSelection_13<br/>
+<a href="#Output-69673470" onClick='toggleBox("Output-69673470", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-69673470" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-69673470">
+Postcondition: <br><br/>
+<div class="skipped">Page timeout!</div><br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.deleteAllCookies(RemoteWebDriver.java:699)
+	at webdriver.Browser.deleteAllCookiesAndRefresh(Browser.java:135)
+	at test.CheckStarSelection_13.afterMainMailBoxPageTest(CheckStarSelection_13.java:44)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 30 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 45 more
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace69673470", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace69673470'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.deleteAllCookies(RemoteWebDriver.java:699)
+	at webdriver.Browser.deleteAllCookiesAndRefresh(Browser.java:135)
+	at test.CheckStarSelection_13.afterMainMailBoxPageTest(CheckStarSelection_13.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 30 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 45 more
+</pre></div></td>
+<td>0</td>
+<td>test.CheckStarSelection_13@72c8e7b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test.MainMailBoxPage_03.before()'><b>before</b><br>Test class: test.MainMailBoxPage_03</td>
+<td></td>
+<td>0</td>
+<td>test.MainMailBoxPage_03@194fad1</td></tr>
+<tr>
+<td title='test.Themes_04.before()'><b>before</b><br>Test class: test.Themes_04</td>
+<td></td>
+<td>0</td>
+<td>test.Themes_04@57bc27f5</td></tr>
+<tr>
+<td title='test.SendMailWithAttachement_05.before()'><b>before</b><br>Test class: test.SendMailWithAttachement_05</td>
+<td></td>
+<td>0</td>
+<td>test.SendMailWithAttachement_05@5c7933ad</td></tr>
+<tr>
+<td title='test.MarkItemAsSpam_11.before()'><b>before</b><br>Test class: test.MarkItemAsSpam_11</td>
+<td></td>
+<td>0</td>
+<td>test.MarkItemAsSpam_11@38467116</td></tr>
+<tr>
+<td title='test.CheckingSignature_12.before()'><b>before</b><br>Test class: test.CheckingSignature_12</td>
+<td></td>
+<td>0</td>
+<td>test.CheckingSignature_12@5f8e8a9d</td></tr>
+<tr>
+<td title='test.CheckStarSelection_13.before()'><b>before</b><br>Test class: test.CheckStarSelection_13</td>
+<td></td>
+<td>0</td>
+<td>test.CheckStarSelection_13@72c8e7b</td></tr>
+<tr>
+<td title='test.MainMailBoxPage_03.startTest()'><b>startTest</b><br>Test class: test.MainMailBoxPage_03</td>
+<td></td>
+<td>0</td>
+<td>test.MainMailBoxPage_03@194fad1</td></tr>
+<tr>
+<td title='test.MainMailBoxPage_03.beforeMainMailBoxPageTest()'><b>beforeMainMailBoxPageTest</b><br>Test class: test.MainMailBoxPage_03</td>
+<td></td>
+<td>0</td>
+<td>test.MainMailBoxPage_03@194fad1</td></tr>
+<tr>
+<td title='test.Themes_04.startTest()'><b>startTest</b><br>Test class: test.Themes_04</td>
+<td></td>
+<td>0</td>
+<td>test.Themes_04@57bc27f5</td></tr>
+<tr>
+<td title='test.Themes_04.beforeMainMailBoxPageTest()'><b>beforeMainMailBoxPageTest</b><br>Test class: test.Themes_04</td>
+<td></td>
+<td>0</td>
+<td>test.Themes_04@57bc27f5</td></tr>
+<tr>
+<td title='test.SendMailWithAttachement_05.startTest()'><b>startTest</b><br>Test class: test.SendMailWithAttachement_05</td>
+<td></td>
+<td>0</td>
+<td>test.SendMailWithAttachement_05@5c7933ad</td></tr>
+<tr>
+<td title='test.SendMailWithAttachement_05.beforeMainMailBoxPageTest()'><b>beforeMainMailBoxPageTest</b><br>Test class: test.SendMailWithAttachement_05</td>
+<td></td>
+<td>0</td>
+<td>test.SendMailWithAttachement_05@5c7933ad</td></tr>
+<tr>
+<td title='test.MarkItemAsSpam_11.startTest()'><b>startTest</b><br>Test class: test.MarkItemAsSpam_11</td>
+<td></td>
+<td>0</td>
+<td>test.MarkItemAsSpam_11@38467116</td></tr>
+<tr>
+<td title='test.MarkItemAsSpam_11.beforeMainMailBoxPageTest()'><b>beforeMainMailBoxPageTest</b><br>Test class: test.MarkItemAsSpam_11</td>
+<td></td>
+<td>0</td>
+<td>test.MarkItemAsSpam_11@38467116</td></tr>
+<tr>
+<td title='test.CheckingSignature_12.startTest()'><b>startTest</b><br>Test class: test.CheckingSignature_12</td>
+<td></td>
+<td>0</td>
+<td>test.CheckingSignature_12@5f8e8a9d</td></tr>
+<tr>
+<td title='test.CheckingSignature_12.beforeMainMailBoxPageTest()'><b>beforeMainMailBoxPageTest</b><br>Test class: test.CheckingSignature_12</td>
+<td></td>
+<td>0</td>
+<td>test.CheckingSignature_12@5f8e8a9d</td></tr>
+<tr>
+<td title='test.CheckStarSelection_13.startTest()'><b>startTest</b><br>Test class: test.CheckStarSelection_13</td>
+<td></td>
+<td>0</td>
+<td>test.CheckStarSelection_13@72c8e7b</td></tr>
+<tr>
+<td title='test.CheckStarSelection_13.beforeMainMailBoxPageTest()'><b>beforeMainMailBoxPageTest</b><br>Test class: test.CheckStarSelection_13</td>
+<td></td>
+<td>0</td>
+<td>test.CheckStarSelection_13@72c8e7b</td></tr>
+<tr>
+<td title='test.Forward_02.after()'><b>after</b><br>Test class: test.Forward_02</td>
+<td></td>
+<td>0</td>
+<td>test.Forward_02@65f8f5ae</td></tr>
+<tr>
+<td title='test.MainMailBoxPage_03.after()'><b>after</b><br>Test class: test.MainMailBoxPage_03</td>
+<td></td>
+<td>0</td>
+<td>test.MainMailBoxPage_03@194fad1</td></tr>
+<tr>
+<td title='test.Themes_04.after()'><b>after</b><br>Test class: test.Themes_04</td>
+<td></td>
+<td>0</td>
+<td>test.Themes_04@57bc27f5</td></tr>
+<tr>
+<td title='test.SendMailWithAttachement_05.after()'><b>after</b><br>Test class: test.SendMailWithAttachement_05</td>
+<td></td>
+<td>0</td>
+<td>test.SendMailWithAttachement_05@5c7933ad</td></tr>
+<tr>
+<td title='test.MarkItemAsSpam_11.after()'><b>after</b><br>Test class: test.MarkItemAsSpam_11</td>
+<td></td>
+<td>0</td>
+<td>test.MarkItemAsSpam_11@38467116</td></tr>
+<tr>
+<td title='test.CheckingSignature_12.after()'><b>after</b><br>Test class: test.CheckingSignature_12</td>
+<td></td>
+<td>0</td>
+<td>test.CheckingSignature_12@5f8e8a9d</td></tr>
+<tr>
+<td title='test.CheckStarSelection_13.after()'><b>after</b><br>Test class: test.CheckStarSelection_13</td>
+<td></td>
+<td>0</td>
+<td>test.CheckStarSelection_13@72c8e7b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test.Forward_02.ForwardTest()'><b>ForwardTest</b><br>Test class: test.Forward_02<br/>
+<a href="#Output-573926093" onClick='toggleBox("Output-573926093", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-573926093" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-573926093">
+--------==[ step 1 ]==--------<br><br/>
+Page Login Page appears<br><br/>
+TextBoxElement typing 'hlebtemp2@gmail.com' <br><br/>
+ButtonElement clicking <br><br/>
+TextBoxElement typing 'dr71gleb' <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ steps: 2-3 ]==--------<br><br/>
+Page Main Page appears<br><br/>
+ButtonElement clicking <br><br/>
+LabelElement clicking <br><br/>
+--------==[ steps: 4-5 ]==--------<br><br/>
+Page Setting Page appears<br><br/>
+LabelElement clicking <br><br/>
+Page ForwardPage appears<br><br/>
+ButtonElement clicking <br><br/>
+TextBoxElement typing 'hleb3temp@gmail.com' <br><br/>
+ButtonElement clicking <br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:49)
+	at com.google.common.collect.Iterators$8.transform(Iterators.java:799)
+	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:48)
+	at com.google.common.collect.Iterators.addAll(Iterators.java:362)
+	at com.google.common.collect.Lists.newArrayList(Lists.java:160)
+	at com.google.common.collect.Lists.newArrayList(Lists.java:144)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:510)
+	at webdriver.elements.BaseElement.pickElementRed(BaseElement.java:51)
+	at webdriver.elements.ButtonElement.pickElementRed(ButtonElement.java:8)
+	at webdriver.elements.BaseElement.click(BaseElement.java:44)
+	at webdriver.elements.ButtonElement.click(ButtonElement.java:8)
+	at test.Pages.ForwardPage.addForwardUser(ForwardPage.java:111)
+	at test.Steps.Steps.setForwardToUser(Steps.java:119)
+	at test.Forward_02.ForwardTest(Forward_02.java:54)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 45 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 60 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace573926093", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace573926093'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:49)
+	at com.google.common.collect.Iterators$8.transform(Iterators.java:799)
+	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:48)
+	at com.google.common.collect.Iterators.addAll(Iterators.java:362)
+	at com.google.common.collect.Lists.newArrayList(Lists.java:160)
+	at com.google.common.collect.Lists.newArrayList(Lists.java:144)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:510)
+	at webdriver.elements.BaseElement.pickElementRed(BaseElement.java:51)
+	at webdriver.elements.ButtonElement.pickElementRed(ButtonElement.java:8)
+	at webdriver.elements.BaseElement.click(BaseElement.java:44)
+	at webdriver.elements.ButtonElement.click(ButtonElement.java:8)
+	at test.Pages.ForwardPage.addForwardUser(ForwardPage.java:111)
+	at test.Steps.Steps.setForwardToUser(Steps.java:119)
+	at test.Forward_02.ForwardTest(Forward_02.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 45 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 60 more
+</pre></div></td>
+<td>26</td>
+<td>test.Forward_02@65f8f5ae</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,28 +625,104 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.MainMailBoxPage_03.MainMailBoxPageTest()'><b>MainMailBoxPageTest</b><br>Test class: test.MainMailBoxPage_03<br/>
-<a href="#Output-2112233878" onClick='toggleBox("Output-2112233878", this, "Show output", "Hide output");'>Show output</a>
+<td title='test.LetterGoToSpam_01.letterGoToSpamTest()'><b>letterGoToSpamTest</b><br>Test class: test.LetterGoToSpam_01<br/>
+<a href="#Output-343812839" onClick='toggleBox("Output-343812839", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2112233878" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2112233878">
+<a href="#Output-343812839" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-343812839">
 --------==[ step 1 ]==--------<br><br/>
-Page Main Page appears<br><br/>
-ButtonElement clicking <br><br/>
---------==[ steps: 2-4 ]==--------<br><br/>
-Page New Message Form appears<br><br/>
+Page Login Page appears<br><br/>
 TextBoxElement typing 'hlebtemp@gmail.com' <br><br/>
-TextBoxElement typing 'JWVEO' <br><br/>
-TextBoxElement typing 'YATPS24376D6H1NTMWB546YSGTH6BW' <br><br/>
 ButtonElement clicking <br><br/>
-Uploading file: C:\Users\Hleb_Halkouski\git\GmailTest\RandomFile.txt<br><br/>
+TextBoxElement typing 'dr71gleb' <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ step 2 ]==--------<br><br/>
 Page Main Page appears<br><br/>
-Assert true: File bigger then 25mb!<br><br/>
+ButtonElement clicking <br><br/>
+Page New Message Form appears<br><br/>
+TextBoxElement typing 'hlebtemp2@gmail.com' <br><br/>
+TextBoxElement typing '37K7Y' <br><br/>
+TextBoxElement typing 'OO8K0_U03X2RFB53QBJQI4XSDRQ1QB' <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ step 3 ]==--------<br><br/>
+Page Login Page appears<br><br/>
+TextBoxElement typing 'hlebtemp2@gmail.com' <br><br/>
+ButtonElement clicking <br><br/>
+TextBoxElement typing 'dr71gleb' <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ step 4 ]==--------<br><br/>
+Page Main Page appears<br><br/>
+LabelElement clicking <br><br/>
+Page Message Page appears<br><br/>
+ButtonElement clicking <br><br/>
+LabelElement clicking <br><br/>
+--------==[ step 5 ]==--------<br><br/>
+Page Login Page appears<br><br/>
+TextBoxElement typing 'hlebtemp@gmail.com' <br><br/>
+ButtonElement clicking <br><br/>
+TextBoxElement typing 'dr71gleb' <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ step 6 ]==--------<br><br/>
+Page Main Page appears<br><br/>
+ButtonElement clicking <br><br/>
+Page New Message Form appears<br><br/>
+TextBoxElement typing 'hlebtemp2@gmail.com' <br><br/>
+TextBoxElement typing '37K7Y' <br><br/>
+TextBoxElement typing 'OO8K0_U03X2RFB53QBJQI4XSDRQ1QB' <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ step 7 ]==--------<br><br/>
+Page Login Page appears<br><br/>
+TextBoxElement typing 'hlebtemp2@gmail.com' <br><br/>
+ButtonElement clicking <br><br/>
+TextBoxElement typing 'dr71gleb' <br><br/>
+ButtonElement clicking <br><br/>
+--------==[ step 8 ]==--------<br><br/>
+Page Spam Page appears<br><br/>
+Page Spam Page appears<br><br/>
+Assert true: Letter in Spam!<br><br/>
 </div>
 </td>
 <td></td>
-<td>15</td>
-<td>test.MainMailBoxPage_03@6c4906d3</td></tr>
+<td>65</td>
+<td>test.LetterGoToSpam_01@5e7cd6cc</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test.CheckStarSelection_13.CheckStarSelection()'><b>CheckStarSelection</b><br>Test class: test.CheckStarSelection_13</td>
+<td></td>
+<td>0</td>
+<td>test.CheckStarSelection_13@72c8e7b</td></tr>
+<tr>
+<td title='test.CheckingSignature_12.CheckingSignatureTest()'><b>CheckingSignatureTest</b><br>Test class: test.CheckingSignature_12</td>
+<td></td>
+<td>0</td>
+<td>test.CheckingSignature_12@5f8e8a9d</td></tr>
+<tr>
+<td title='test.MainMailBoxPage_03.MainMailBoxPageTest()'><b>MainMailBoxPageTest</b><br>Test class: test.MainMailBoxPage_03</td>
+<td></td>
+<td>0</td>
+<td>test.MainMailBoxPage_03@194fad1</td></tr>
+<tr>
+<td title='test.MarkItemAsSpam_11.MarkItemAsSpamTest()'><b>MarkItemAsSpamTest</b><br>Test class: test.MarkItemAsSpam_11</td>
+<td></td>
+<td>0</td>
+<td>test.MarkItemAsSpam_11@38467116</td></tr>
+<tr>
+<td title='test.SendMailWithAttachement_05.SendMailWithAttachementTest()'><b>SendMailWithAttachementTest</b><br>Test class: test.SendMailWithAttachement_05</td>
+<td></td>
+<td>0</td>
+<td>test.SendMailWithAttachement_05@5c7933ad</td></tr>
+<tr>
+<td title='test.Themes_04.ThemesTest()'><b>ThemesTest</b><br>Test class: test.Themes_04</td>
+<td></td>
+<td>0</td>
+<td>test.Themes_04@57bc27f5</td></tr>
 </table><p>
 </body>
 </html>

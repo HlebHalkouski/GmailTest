@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Test_Plan">
-              <span class="suite-name border-passed">Test Plan</span>
+              <span class="suite-name border-failed">Test Plan</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,7 +90,60 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,  6 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Test_Plan" class="hide-methods failed suite-Test_Plan"> (hide)</a> <!-- hide-methods failed suite-Test_Plan -->
+                      <a href="#" panel-name="suite-Test_Plan" class="show-methods failed suite-Test_Plan"> (show)</a> <!-- show-methods failed suite-Test_Plan -->
+                    </span>
+                    <div class="method-list-content failed suite-Test_Plan">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.Forward_02" hash-for-method="ForwardTest">ForwardTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Test_Plan -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Test_Plan" class="hide-methods skipped suite-Test_Plan"> (hide)</a> <!-- hide-methods skipped suite-Test_Plan -->
+                      <a href="#" panel-name="suite-Test_Plan" class="show-methods skipped suite-Test_Plan"> (show)</a> <!-- show-methods skipped suite-Test_Plan -->
+                    </span>
+                    <div class="method-list-content skipped suite-Test_Plan">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.CheckStarSelection_13" hash-for-method="CheckStarSelection">CheckStarSelection</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.CheckingSignature_12" hash-for-method="CheckingSignatureTest">CheckingSignatureTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.MainMailBoxPage_03" hash-for-method="MainMailBoxPageTest">MainMailBoxPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.MarkItemAsSpam_11" hash-for-method="MarkItemAsSpamTest">MarkItemAsSpamTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.SendMailWithAttachement_05" hash-for-method="SendMailWithAttachementTest">SendMailWithAttachementTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.Themes_04" hash-for-method="ThemesTest">ThemesTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Test_Plan -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +154,7 @@
                     <div class="method-list-content passed suite-Test_Plan">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.MainMailBoxPage_03" hash-for-method="MainMailBoxPageTest">MainMailBoxPageTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Plan" title="test.LetterGoToSpam_01" hash-for-method="letterGoToSpamTest">letterGoToSpamTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Test_Plan -->
@@ -116,9 +169,97 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_Plan" class="panel Test_Plan">
-          <div class="suite-Test_Plan-class-passed">
+          <div class="suite-Test_Plan-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
+              <span class="class-name">test.Forward_02</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ForwardTest">
+                  </a> <!-- ForwardTest -->
+                  <span class="method-name">ForwardTest</span>
+                  <div class="stack-trace">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
+System info: host: &apos;EPBYMINW2701&apos;, ip: &apos;10.6.102.41&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:49)
+	at com.google.common.collect.Iterators$8.transform(Iterators.java:799)
+	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:48)
+	at com.google.common.collect.Iterators.addAll(Iterators.java:362)
+	at com.google.common.collect.Lists.newArrayList(Lists.java:160)
+	at com.google.common.collect.Lists.newArrayList(Lists.java:144)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:510)
+	at webdriver.elements.BaseElement.pickElementRed(BaseElement.java:51)
+	at webdriver.elements.ButtonElement.pickElementRed(ButtonElement.java:8)
+	at webdriver.elements.BaseElement.click(BaseElement.java:44)
+	at webdriver.elements.ButtonElement.click(ButtonElement.java:8)
+	at test.Pages.ForwardPage.addForwardUser(ForwardPage.java:111)
+	at test.Steps.Steps.setForwardToUser(Steps.java:119)
+	at test.Forward_02.ForwardTest(Forward_02.java:54)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 45 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 60 more
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Plan-class-failed -->
+          <div class="suite-Test_Plan-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">test.CheckingSignature_12</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckingSignatureTest">
+                  </a> <!-- CheckingSignatureTest -->
+                  <span class="method-name">CheckingSignatureTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Plan-class-skipped -->
+          <div class="suite-Test_Plan-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
               <span class="class-name">test.MainMailBoxPage_03</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -127,6 +268,81 @@
                   <a name="MainMailBoxPageTest">
                   </a> <!-- MainMailBoxPageTest -->
                   <span class="method-name">MainMailBoxPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Plan-class-skipped -->
+          <div class="suite-Test_Plan-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">test.CheckStarSelection_13</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CheckStarSelection">
+                  </a> <!-- CheckStarSelection -->
+                  <span class="method-name">CheckStarSelection</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Plan-class-skipped -->
+          <div class="suite-Test_Plan-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">test.MarkItemAsSpam_11</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="MarkItemAsSpamTest">
+                  </a> <!-- MarkItemAsSpamTest -->
+                  <span class="method-name">MarkItemAsSpamTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Plan-class-skipped -->
+          <div class="suite-Test_Plan-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">test.SendMailWithAttachement_05</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="SendMailWithAttachementTest">
+                  </a> <!-- SendMailWithAttachementTest -->
+                  <span class="method-name">SendMailWithAttachementTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Plan-class-skipped -->
+          <div class="suite-Test_Plan-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">test.Themes_04</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ThemesTest">
+                  </a> <!-- ThemesTest -->
+                  <span class="method-name">ThemesTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Plan-class-skipped -->
+          <div class="suite-Test_Plan-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.LetterGoToSpam_01</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="letterGoToSpamTest">
+                  </a> <!-- letterGoToSpamTest -->
+                  <span class="method-name">letterGoToSpamTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,7 +365,14 @@
     &lt;parameter name=&quot;password1&quot; value=&quot;dr71gleb&quot;/&gt;
     &lt;parameter name=&quot;username1&quot; value=&quot;hlebtemp@gmail.com&quot;/&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;test.LetterGoToSpam_01&quot;/&gt;
+      &lt;class name=&quot;test.Forward_02&quot;/&gt;
       &lt;class name=&quot;test.MainMailBoxPage_03&quot;/&gt;
+      &lt;class name=&quot;test.Themes_04&quot;/&gt;
+      &lt;class name=&quot;test.SendMailWithAttachement_05&quot;/&gt;
+      &lt;class name=&quot;test.MarkItemAsSpam_11&quot;/&gt;
+      &lt;class name=&quot;test.CheckingSignature_12&quot;/&gt;
+      &lt;class name=&quot;test.CheckStarSelection_13&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Smoke Tests --&gt;
 &lt;/suite&gt; &lt;!-- Test Plan --&gt;
@@ -163,7 +386,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Smoke Tests (1 class)</span>
+                <span class="test-name">Smoke Tests (8 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -189,16 +412,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'MainMailBoxPageTest')
-data.setCell(0, 2, 'test.MainMailBoxPage_03')
-data.setCell(0, 3, 15877);
+data.setCell(0, 1, 'letterGoToSpamTest')
+data.setCell(0, 2, 'test.LetterGoToSpam_01')
+data.setCell(0, 3, 65395);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'ForwardTest')
+data.setCell(1, 2, 'test.Forward_02')
+data.setCell(1, 3, 26383);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'SendMailWithAttachementTest')
+data.setCell(2, 2, 'test.SendMailWithAttachement_05')
+data.setCell(2, 3, 10);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'CheckingSignatureTest')
+data.setCell(3, 2, 'test.CheckingSignature_12')
+data.setCell(3, 3, 1);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'MainMailBoxPageTest')
+data.setCell(4, 2, 'test.MainMailBoxPage_03')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'MarkItemAsSpamTest')
+data.setCell(5, 2, 'test.MarkItemAsSpam_11')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'ThemesTest')
+data.setCell(6, 2, 'test.Themes_04')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'CheckStarSelection')
+data.setCell(7, 2, 'test.CheckStarSelection_13')
+data.setCell(7, 3, 0);
 window.suiteTableData['Test_Plan']= { tableData: data, tableDiv: 'times-div-Test_Plan'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Test_Plan">
               </div> <!-- times-div-Test_Plan -->
             </div> <!-- times-div -->
@@ -210,20 +461,80 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">MainMailBoxPageTest</span>
+              <span class="reporter-method-name">letterGoToSpamTest</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">--------==[ step 1 ]==--------<br></span>
-                <span class="reporter-method-output">Page Main Page appears<br></span>
-                <span class="reporter-method-output">ButtonElement clicking <br></span>
-                <span class="reporter-method-output">--------==[ steps: 2-4 ]==--------<br></span>
-                <span class="reporter-method-output">Page New Message Form appears<br></span>
+                <span class="reporter-method-output">Page Login Page appears<br></span>
                 <span class="reporter-method-output">TextBoxElement typing 'hlebtemp@gmail.com' <br></span>
-                <span class="reporter-method-output">TextBoxElement typing 'JWVEO' <br></span>
-                <span class="reporter-method-output">TextBoxElement typing 'YATPS24376D6H1NTMWB546YSGTH6BW' <br></span>
                 <span class="reporter-method-output">ButtonElement clicking <br></span>
-                <span class="reporter-method-output">Uploading file: C:\Users\Hleb_Halkouski\git\GmailTest\RandomFile.txt<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 2 ]==--------<br></span>
                 <span class="reporter-method-output">Page Main Page appears<br></span>
-                <span class="reporter-method-output">Assert true: File bigger then 25mb!<br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">Page New Message Form appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
+                <span class="reporter-method-output">TextBoxElement typing '37K7Y' <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'OO8K0_U03X2RFB53QBJQI4XSDRQ1QB' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 3 ]==--------<br></span>
+                <span class="reporter-method-output">Page Login Page appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 4 ]==--------<br></span>
+                <span class="reporter-method-output">Page Main Page appears<br></span>
+                <span class="reporter-method-output">LabelElement clicking <br></span>
+                <span class="reporter-method-output">Page Message Page appears<br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">LabelElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 5 ]==--------<br></span>
+                <span class="reporter-method-output">Page Login Page appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp@gmail.com' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 6 ]==--------<br></span>
+                <span class="reporter-method-output">Page Main Page appears<br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">Page New Message Form appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
+                <span class="reporter-method-output">TextBoxElement typing '37K7Y' <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'OO8K0_U03X2RFB53QBJQI4XSDRQ1QB' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 7 ]==--------<br></span>
+                <span class="reporter-method-output">Page Login Page appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ step 8 ]==--------<br></span>
+                <span class="reporter-method-output">Page Spam Page appears<br></span>
+                <span class="reporter-method-output">Page Spam Page appears<br></span>
+                <span class="reporter-method-output">Assert true: Letter in Spam!<br></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">ForwardTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">--------==[ step 1 ]==--------<br></span>
+                <span class="reporter-method-output">Page Login Page appears<br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hlebtemp2@gmail.com' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'dr71gleb' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ steps: 2-3 ]==--------<br></span>
+                <span class="reporter-method-output">Page Main Page appears<br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">LabelElement clicking <br></span>
+                <span class="reporter-method-output">--------==[ steps: 4-5 ]==--------<br></span>
+                <span class="reporter-method-output">Page Setting Page appears<br></span>
+                <span class="reporter-method-output">LabelElement clicking <br></span>
+                <span class="reporter-method-output">Page ForwardPage appears<br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
+                <span class="reporter-method-output">TextBoxElement typing 'hleb3temp@gmail.com' <br></span>
+                <span class="reporter-method-output">ButtonElement clicking <br></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -241,27 +552,106 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.MainMailBoxPage_03</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.LetterGoToSpam_01</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">startTest</span>
-                <span class="method-start">15 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">beforeMainMailBoxPageTest(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com)</span>
-                <span class="method-start">16 ms</span>
+                <span class="method-name">beforeSpamTest(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb)</span>
+                <span class="method-start">29 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">MainMailBoxPageTest</span>
-                <span class="method-start">2895 ms</span>
+                <span class="method-name">letterGoToSpamTest</span>
+                <span class="method-start">29 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">startTest</span>
+                <span class="method-start">29 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterSpamTest</span>
+                <span class="method-start">65425 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">18773 ms</span>
+                <span class="method-start">78708 ms</span>
               </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.Forward_02</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">before</span>
+                <span class="method-start">79901 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforForwardTest(hlebtemp@gmail.com, dr71gleb, hlebtemp2@gmail.com, dr71gleb, hleb3temp@gmail.com, dr71gleb)</span>
+                <span class="method-start">85486 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">startTest</span>
+                <span class="method-start">85486 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ForwardTest</span>
+                <span class="method-start">85496 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">afterForwardTest</span>
+                <span class="method-start">111889 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.MainMailBoxPage_03</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">MainMailBoxPageTest</span>
+                <span class="method-start">113931 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.SendMailWithAttachement_05</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">SendMailWithAttachementTest</span>
+                <span class="method-start">113941 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.Themes_04</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">ThemesTest</span>
+                <span class="method-start">113941 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.MarkItemAsSpam_11</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">MarkItemAsSpamTest</span>
+                <span class="method-start">113952 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.CheckingSignature_12</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CheckingSignatureTest</span>
+                <span class="method-start">113957 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.CheckStarSelection_13</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CheckStarSelection</span>
+                <span class="method-start">113962 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">afterMainMailBoxPageTest</span>
+                <span class="method-start">113965 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

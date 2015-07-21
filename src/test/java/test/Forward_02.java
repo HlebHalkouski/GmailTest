@@ -105,7 +105,7 @@ public class Forward_02 extends BaseTest {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void afterForwardTest() {
 		info("========== Postcondition========== ");
 		Browser.getInstance().deleteAllCookiesAndRefresh();

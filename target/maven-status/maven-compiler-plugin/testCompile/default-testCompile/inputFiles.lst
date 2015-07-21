@@ -3,12 +3,12 @@ C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\MainMailBoxPage_03.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Pages\NewMessageForm.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\Asserts.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\interfaces\TextBox.java
-C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\utils\RandomString.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\fieldDecorator\Container.java
-C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\utils\RandomFile.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\BaseEntity.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Pages\SpamPage.java
+C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\SendMailWithAttachement_05.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Themes_04.java
+C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\utils\RandomUtil.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\LetterGoToSpam_01.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Pages\MainPage.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\BasePage.java
@@ -23,6 +23,7 @@ C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\LabelElem
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\utils\RobotForAttachFile.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\interfaces\Label.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\fieldDecorator\AbstractContainer.java
+C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\CheckStarSelection_13.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\BaseTest.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Pages\SettingPage.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\interfaces\Button.java
@@ -33,11 +34,12 @@ C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\interface
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Pages\ThemePage.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\Logger.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Pages\TrashPage.java
-C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Theme_06.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\fieldDecorator\IContainerFactory.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\TextBoxElement.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\ButtonElement.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\BaseElement.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\fieldDecorator\ContainerFactory.java
+C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\MarkItemAsSpam_11.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\Pages\ForwardPage.java
 C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\webdriver\elements\RadioButtonElement.java
+C:\Users\Hleb_Halkouski\git\GmailTest\src\test\java\test\CheckingSignature_12.java
