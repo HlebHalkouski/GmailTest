@@ -15,15 +15,15 @@
     <parameter name="password1" value="dr71gleb"/>
     <parameter name="username1" value="hlebtemp@gmail.com"/>
     <classes>
-      <class name="test.MarkItemAsSpam_11">
+      <class name="test.MainMailBoxPage_03">
         <methods>
           <include name="before"/>
-          <include name="MarkItemAsSpamTest"/>
+          <include name="beforeMainMailBoxPageTest"/>
+          <include name="MainMailBoxPageTest"/>
           <include name="startTest"/>
           <include name="after"/>
-          <include name="beforeMainMailBoxPageTest"/>
         </methods>
-      </class> <!-- test.MarkItemAsSpam_11 -->
+      </class> <!-- test.MainMailBoxPage_03 -->
     </classes>
   </test> <!-- Smoke Tests(failed) -->
 </suite> <!-- Failed suite [Test Plan] -->

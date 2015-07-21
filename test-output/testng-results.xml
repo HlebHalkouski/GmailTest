@@ -5,7 +5,7 @@
       <![CDATA[Browser is ready<br>]]>
     </line>
     <line>
-      <![CDATA[==========  Test case: 'MarkItemAsSpam_11' ==========<br>]]>
+      <![CDATA[==========  Test case: 'MainMailBoxPage_03' ==========<br>]]>
     </line>
     <line>
       <![CDATA[Precondition: <br>]]>
@@ -26,16 +26,7 @@
       <![CDATA[ButtonElement clicking <br>]]>
     </line>
     <line>
-      <![CDATA[--------==[ steps: 1-2 ]==--------<br>]]>
-    </line>
-    <line>
-      <![CDATA[Page Main Page appears<br>]]>
-    </line>
-    <line>
-      <![CDATA[LabelElement clicking <br>]]>
-    </line>
-    <line>
-      <![CDATA[--------==[ step 3 ]==--------<br>]]>
+      <![CDATA[--------==[ step 1 ]==--------<br>]]>
     </line>
     <line>
       <![CDATA[Page Main Page appears<br>]]>
@@ -44,81 +35,53 @@
       <![CDATA[ButtonElement clicking <br>]]>
     </line>
     <line>
-      <![CDATA[Page Main Page appears<br>]]>
+      <![CDATA[--------==[ steps: 2-4 ]==--------<br>]]>
     </line>
     <line>
-      <![CDATA[<div class="skipped">LabelElement Unable to locate element: {"method":"name","selector":"lbLetter" </div><br>]]>
+      <![CDATA[Page New Message Form appears<br>]]>
     </line>
     <line>
-      <![CDATA[Assert true: Letter isn't in inbox<br>]]>
+      <![CDATA[TextBoxElement typing 'hlebtemp@gmail.com' <br>]]>
     </line>
     <line>
-      <![CDATA[--------==[ step 4 ]==--------<br>]]>
+      <![CDATA[TextBoxElement typing 'JWVEO' <br>]]>
     </line>
     <line>
-      <![CDATA[Page Spam Page appears<br>]]>
-    </line>
-    <line>
-      <![CDATA[--------==[ step 5 ]==--------<br>]]>
-    </line>
-    <line>
-      <![CDATA[Page Main Page appears<br>]]>
-    </line>
-    <line>
-      <![CDATA[LabelElement clicking <br>]]>
-    </line>
-    <line>
-      <![CDATA[--------==[ step 6 ]==--------<br>]]>
-    </line>
-    <line>
-      <![CDATA[Page Message Page appears<br>]]>
+      <![CDATA[TextBoxElement typing 'YATPS24376D6H1NTMWB546YSGTH6BW' <br>]]>
     </line>
     <line>
       <![CDATA[ButtonElement clicking <br>]]>
     </line>
     <line>
-      <![CDATA[LabelElement clicking <br>]]>
+      <![CDATA[Uploading file: C:\Users\Hleb_Halkouski\git\GmailTest\RandomFile.txt<br>]]>
     </line>
     <line>
       <![CDATA[Page Main Page appears<br>]]>
     </line>
     <line>
-      <![CDATA[<div class="skipped">LabelElement Timed out after 0 seconds waiting for webdriver.elements.BaseElement$1@34f6515b
-Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
-System info: host: 'EPBYMINW2701', ip: '10.6.102.41', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=35.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: b2da830f-dbf4-4280-a972-f614cc755e32 </div><br>]]>
-    </line>
-    <line>
-      <![CDATA[Assert true: Letter isn't in spam<br>]]>
-    </line>
-    <line>
-      <![CDATA[--------==[ steps: 7-8 ]==--------<br>]]>
-    </line>
-    <line>
-      <![CDATA[Page Main Page appears<br>]]>
-    </line>
-    <line>
-      <![CDATA[Assert true: Letter in inbox!<br>]]>
+      <![CDATA[Assert true: File bigger then 25mb!<br>]]>
     </line>
     <line>
       <![CDATA[driver is quit<br>]]>
     </line>
   </reporter-output>
-  <suite name="Test Plan" duration-ms="82187" started-at="2015-07-21T11:53:44Z" finished-at="2015-07-21T11:55:06Z">
+  <suite name="Test Plan" duration-ms="20615" started-at="2015-07-21T15:05:04Z" finished-at="2015-07-21T15:05:25Z">
     <groups>
     </groups>
-    <test name="Smoke Tests" duration-ms="82187" started-at="2015-07-21T11:53:44Z" finished-at="2015-07-21T11:55:06Z">
-      <class name="test.MarkItemAsSpam_11">
-        <test-method status="PASS" signature="startTest()[pri:0, instance:test.MarkItemAsSpam_11@4bdeaabb]" name="startTest" is-config="true" duration-ms="12" started-at="2015-07-21T14:53:44Z" finished-at="2015-07-21T14:53:44Z">
+    <test name="Smoke Tests" duration-ms="20615" started-at="2015-07-21T15:05:04Z" finished-at="2015-07-21T15:05:25Z">
+      <class name="test.MainMailBoxPage_03">
+        <test-method status="PASS" signature="before()[pri:0, instance:test.MainMailBoxPage_03@6c4906d3]" name="before" is-config="true" duration-ms="12" started-at="2015-07-21T18:05:04Z" finished-at="2015-07-21T18:05:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="startTest()[pri:0, instance:test.MainMailBoxPage_03@6c4906d3]" name="startTest" is-config="true" duration-ms="1" started-at="2015-07-21T18:05:04Z" finished-at="2015-07-21T18:05:04Z">
           <reporter-output>
             <line>
-              <![CDATA[==========  Test case: 'MarkItemAsSpam_11' ==========<br>]]>
+              <![CDATA[==========  Test case: 'MainMailBoxPage_03' ==========<br>]]>
             </line>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method status="PASS" signature="beforeMainMailBoxPageTest(java.lang.String, java.lang.String)[pri:0, instance:test.MarkItemAsSpam_11@4bdeaabb]" name="beforeMainMailBoxPageTest" is-config="true" duration-ms="3390" started-at="2015-07-21T14:53:44Z" depends-on-methods="webdriver.BaseTest.startTest" finished-at="2015-07-21T14:53:47Z">
+        <test-method status="PASS" signature="beforeMainMailBoxPageTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.MainMailBoxPage_03@6c4906d3]" name="beforeMainMailBoxPageTest" is-config="true" duration-ms="2879" started-at="2015-07-21T18:05:04Z" finished-at="2015-07-21T18:05:07Z">
           <params>
             <param index="0">
               <value>
@@ -128,6 +91,11 @@ Session ID: b2da830f-dbf4-4280-a972-f614cc755e32 </div><br>]]>
             <param index="1">
               <value>
                 <![CDATA[dr71gleb]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[hlebtemp2@gmail.com]]>
               </value>
             </param>
           </params>
@@ -152,23 +120,10 @@ Session ID: b2da830f-dbf4-4280-a972-f614cc755e32 </div><br>]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeMainMailBoxPageTest -->
-        <test-method status="PASS" signature="before()[pri:0, instance:test.MarkItemAsSpam_11@4bdeaabb]" name="before" is-config="true" duration-ms="1" started-at="2015-07-21T14:53:47Z" finished-at="2015-07-21T14:53:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- before -->
-        <test-method status="PASS" signature="MarkItemAsSpamTest()[pri:0, instance:test.MarkItemAsSpam_11@4bdeaabb]" name="MarkItemAsSpamTest" duration-ms="78136" started-at="2015-07-21T14:53:47Z" finished-at="2015-07-21T14:55:05Z">
+        <test-method status="PASS" signature="MainMailBoxPageTest()[pri:0, instance:test.MainMailBoxPage_03@6c4906d3]" name="MainMailBoxPageTest" duration-ms="15877" started-at="2015-07-21T18:05:07Z" finished-at="2015-07-21T18:05:23Z">
           <reporter-output>
             <line>
-              <![CDATA[--------==[ steps: 1-2 ]==--------<br>]]>
-            </line>
-            <line>
-              <![CDATA[Page Main Page appears<br>]]>
-            </line>
-            <line>
-              <![CDATA[LabelElement clicking <br>]]>
-            </line>
-            <line>
-              <![CDATA[--------==[ step 3 ]==--------<br>]]>
+              <![CDATA[--------==[ step 1 ]==--------<br>]]>
             </line>
             <line>
               <![CDATA[Page Main Page appears<br>]]>
@@ -177,74 +132,42 @@ Session ID: b2da830f-dbf4-4280-a972-f614cc755e32 </div><br>]]>
               <![CDATA[ButtonElement clicking <br>]]>
             </line>
             <line>
-              <![CDATA[Page Main Page appears<br>]]>
+              <![CDATA[--------==[ steps: 2-4 ]==--------<br>]]>
             </line>
             <line>
-              <![CDATA[<div class="skipped">LabelElement Unable to locate element: {"method":"name","selector":"lbLetter" </div><br>]]>
+              <![CDATA[Page New Message Form appears<br>]]>
             </line>
             <line>
-              <![CDATA[Assert true: Letter isn't in inbox<br>]]>
+              <![CDATA[TextBoxElement typing 'hlebtemp@gmail.com' <br>]]>
             </line>
             <line>
-              <![CDATA[--------==[ step 4 ]==--------<br>]]>
+              <![CDATA[TextBoxElement typing 'JWVEO' <br>]]>
             </line>
             <line>
-              <![CDATA[Page Spam Page appears<br>]]>
-            </line>
-            <line>
-              <![CDATA[--------==[ step 5 ]==--------<br>]]>
-            </line>
-            <line>
-              <![CDATA[Page Main Page appears<br>]]>
-            </line>
-            <line>
-              <![CDATA[LabelElement clicking <br>]]>
-            </line>
-            <line>
-              <![CDATA[--------==[ step 6 ]==--------<br>]]>
-            </line>
-            <line>
-              <![CDATA[Page Message Page appears<br>]]>
+              <![CDATA[TextBoxElement typing 'YATPS24376D6H1NTMWB546YSGTH6BW' <br>]]>
             </line>
             <line>
               <![CDATA[ButtonElement clicking <br>]]>
             </line>
             <line>
-              <![CDATA[LabelElement clicking <br>]]>
+              <![CDATA[Uploading file: C:\Users\Hleb_Halkouski\git\GmailTest\RandomFile.txt<br>]]>
             </line>
             <line>
               <![CDATA[Page Main Page appears<br>]]>
             </line>
             <line>
-              <![CDATA[<div class="skipped">LabelElement Timed out after 0 seconds waiting for webdriver.elements.BaseElement$1@34f6515b
-Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
-System info: host: 'EPBYMINW2701', ip: '10.6.102.41', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=35.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: b2da830f-dbf4-4280-a972-f614cc755e32 </div><br>]]>
-            </line>
-            <line>
-              <![CDATA[Assert true: Letter isn't in spam<br>]]>
-            </line>
-            <line>
-              <![CDATA[--------==[ steps: 7-8 ]==--------<br>]]>
-            </line>
-            <line>
-              <![CDATA[Page Main Page appears<br>]]>
-            </line>
-            <line>
-              <![CDATA[Assert true: Letter in inbox!<br>]]>
+              <![CDATA[Assert true: File bigger then 25mb!<br>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- MarkItemAsSpamTest -->
-        <test-method status="PASS" signature="after()[pri:0, instance:test.MarkItemAsSpam_11@4bdeaabb]" name="after" is-config="true" duration-ms="633" started-at="2015-07-21T14:55:05Z" finished-at="2015-07-21T14:55:06Z">
+        </test-method> <!-- MainMailBoxPageTest -->
+        <test-method status="PASS" signature="after()[pri:0, instance:test.MainMailBoxPage_03@6c4906d3]" name="after" is-config="true" duration-ms="1841" started-at="2015-07-21T18:05:23Z" finished-at="2015-07-21T18:05:25Z">
           <reporter-output>
             <line>
               <![CDATA[driver is quit<br>]]>
             </line>
           </reporter-output>
         </test-method> <!-- after -->
-      </class> <!-- test.MarkItemAsSpam_11 -->
+      </class> <!-- test.MainMailBoxPage_03 -->
     </test> <!-- Smoke Tests -->
   </suite> <!-- Test Plan -->
 </testng-results>

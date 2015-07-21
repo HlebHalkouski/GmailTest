@@ -19,7 +19,8 @@ import webdriver.utils.RobotForAttachFile;
 
 public class Steps extends BaseEntity {
 
-	private static final String MAIL_SPAM = "https://mail.google.com/mail/u/0/#spam";
+	protected static final String MAIL_STARRED = "https://mail.google.com/mail/u/0/#starred";
+	protected static final String MAIL_SPAM = "https://mail.google.com/mail/u/0/#spam";
 
 	protected String formatLogMsg(final String message) {
 		return message;
@@ -34,8 +35,10 @@ public class Steps extends BaseEntity {
 	/**
 	 * Send Random message to user.
 	 *
-	 * @param username1 the sender email
-	 * @param username2 the addresser email
+	 * @param username1
+	 *            the sender email
+	 * @param username2
+	 *            the addresser email
 	 * @return the message
 	 */
 	public Letter sendMessageToUser(String username1, String username2) {
@@ -48,8 +51,10 @@ public class Steps extends BaseEntity {
 	/**
 	 * Send message to user.
 	 *
-	 * @param messageUser1 the message
-	 * @param username2 the addresser email
+	 * @param messageUser1
+	 *            the message
+	 * @param username2
+	 *            the addresser email
 	 * @return the letter
 	 */
 	public Letter sendMessageToUser(Letter messageUser1, String username2) {
@@ -59,23 +64,21 @@ public class Steps extends BaseEntity {
 		return newMessageForm.sendMessageToUser(messageUser1, username2);
 	}
 
-	
-	
 	public void markLetterAsSpam(Letter letterUser) {
 		MainPage mainPage = new MainPage();
 		mainPage.enterMessage(letterUser);
 		MessagePage messagePage = new MessagePage();
 		messagePage.markMessageAsSpam();
-		
+
 	}
 
-	public boolean isLetterInSpam(String username, Letter letterUser) {
+	public boolean isLetterInSpam(Letter letterUser) {
 		SpamPage spamPage = new SpamPage();
 		return spamPage.isLetterInFolder(letterUser);
 	}
 
 	public void goToSpam() {
-		browser.navigate(MAIL_SPAM);	
+		browser.navigate(MAIL_SPAM);
 		@SuppressWarnings("unused")
 		SpamPage spamPage = new SpamPage();
 	}
@@ -85,14 +88,13 @@ public class Steps extends BaseEntity {
 		spamPage.enterMessage(letterUser);
 		MessagePage messagePage = new MessagePage();
 		messagePage.markMessageIsNoSpam();
-		
+
 	}
 
 	public void clickBtnSetting() {
 		MainPage mainPage = new MainPage();
-		mainPage.clickBtnSetting();	
+		mainPage.clickBtnSetting();
 	}
-
 
 	public Boolean isSettingDropDown() {
 		MainPage mainPage = new MainPage();
@@ -100,13 +102,13 @@ public class Steps extends BaseEntity {
 	}
 
 	public void enterSettingTheme() {
-		MainPage mainPage = new MainPage();	
+		MainPage mainPage = new MainPage();
 		mainPage.clickSettingsTheme();
 	}
-	
+
 	public void enterSetting() {
 		MainPage mainPage = new MainPage();
-		mainPage.clickBtnSetting();	
+		mainPage.clickBtnSetting();
 		mainPage.clickSettingSetting();
 	}
 
@@ -114,7 +116,7 @@ public class Steps extends BaseEntity {
 		SettingPage settingPage = new SettingPage();
 		settingPage.enterForwardSetting();
 		ForwardPage forwardPage = new ForwardPage();
-		return forwardPage.addForwardUser(username3);	
+		return forwardPage.addForwardUser(username3);
 	}
 
 	public void confirmForward(Letter letteForward) {
@@ -126,7 +128,7 @@ public class Steps extends BaseEntity {
 
 	public void startWriteNewMessage() {
 		MainPage mainPage = new MainPage();
-		mainPage.startWriteNewMessage();		
+		mainPage.startWriteNewMessage();
 	}
 
 	public Boolean isAlertBigFile() {
@@ -171,19 +173,15 @@ public class Steps extends BaseEntity {
 		browser.navigate(ForwardPage.getUrlPage());
 		ForwardPage forwardPage = new ForwardPage();
 		forwardPage.deleteForward();
-		
 	}
-
-	
 
 	public void enterUploadTheme() {
 		ThemePage themePage = new ThemePage();
 		themePage.enterUploadTheme();
 	}
 
-	
 	public void uploadThemeFile(File attachFile) {
-		RobotForAttachFile.attachFile(attachFile);		
+		RobotForAttachFile.attachFile(attachFile);
 	}
 
 	public Boolean isAlertWrongFilePresent() {
@@ -195,8 +193,8 @@ public class Steps extends BaseEntity {
 	public Letter typeMessageFields(String username1, String username2) {
 		NewMessageForm newMessageForm = new NewMessageForm();
 		Letter sendingLetter = newMessageForm.typeMessageFields(username1, username2);
-		return sendingLetter;	
-		
+		return sendingLetter;
+
 	}
 
 	public void openParseEmotion() {
@@ -212,7 +210,7 @@ public class Steps extends BaseEntity {
 	public ArrayList<String> chooseEmotionsIcons(int countIcons) {
 		NewMessageForm newMessageForm = new NewMessageForm();
 		return newMessageForm.chooseEmotionsIcons(countIcons);
-		
+
 	}
 
 	public Boolean isIconsInBody(ArrayList<String> listSendingIcons) {
@@ -252,9 +250,43 @@ public class Steps extends BaseEntity {
 
 	public void markMessageIsNoSpam() {
 		MessagePage messagePage = new MessagePage();
-		messagePage.markMessageIsNoSpam();		
+		messagePage.markMessageIsNoSpam();
 	}
 
-	
-				
+	public void enterSignature(String singnature) {
+		SettingPage settingPage = new SettingPage();
+		settingPage.enterSignature(singnature);
+	}
+
+	public void saveSettingsChange() {
+		SettingPage settingPage = new SettingPage();
+		settingPage.saveSettingsChange();
+	}
+
+	public Boolean isSignatureInMessage(String singnature) {
+		MainPage mainPage = new MainPage();
+		return mainPage.isSignatureInMessage(singnature);
+	}
+
+	public Letter starredTopMessage() {
+		MainPage mainPage = new MainPage();
+		return mainPage.starredTopMessage();
+	}
+
+	public void goToStared() {
+		browser.navigate(MAIL_STARRED);
+	}
+
+	public Boolean isStarSelect() {
+		MainPage mainPage = new MainPage();
+		return mainPage.isStarSelect();
+	}
+
+	public void sendAttachMessage(String username2, File attachFile) {
+		NewMessageForm newMessageForm = new NewMessageForm();
+		newMessageForm.typeMessageFields(username2, username2);
+		newMessageForm.clickAttachFile();
+		RobotForAttachFile.attachFile(attachFile);
+	}
+
 }

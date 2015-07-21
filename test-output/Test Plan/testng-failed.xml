@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test Plan]">
+  <parameter name="password3" value="dr71gleb"/>
+  <parameter name="username3" value="hleb3temp@gmail.com"/>
+  <parameter name="password2" value="dr71gleb"/>
+  <parameter name="username2" value="hlebtemp2@gmail.com"/>
+  <parameter name="password1" value="dr71gleb"/>
+  <parameter name="username1" value="hlebtemp@gmail.com"/>
+  <test name="Smoke Tests(failed)">
+    <parameter name="password3" value="dr71gleb"/>
+    <parameter name="username3" value="hleb3temp@gmail.com"/>
+    <parameter name="password2" value="dr71gleb"/>
+    <parameter name="username2" value="hlebtemp2@gmail.com"/>
+    <parameter name="password1" value="dr71gleb"/>
+    <parameter name="username1" value="hlebtemp@gmail.com"/>
+    <classes>
+      <class name="test.MainMailBoxPage_03">
+        <methods>
+          <include name="before"/>
+          <include name="beforeMainMailBoxPageTest"/>
+          <include name="MainMailBoxPageTest"/>
+          <include name="startTest"/>
+          <include name="after"/>
+        </methods>
+      </class> <!-- test.MainMailBoxPage_03 -->
+    </classes>
+  </test> <!-- Smoke Tests(failed) -->
+</suite> <!-- Failed suite [Test Plan] -->

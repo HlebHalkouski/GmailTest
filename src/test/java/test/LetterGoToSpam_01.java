@@ -1,11 +1,12 @@
 package test;
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import webdriver.BaseTest;
+import webdriver.Browser;
 import webdriver.utils.Letter;
 
 public class LetterGoToSpam_01 extends BaseTest {
@@ -16,7 +17,7 @@ public class LetterGoToSpam_01 extends BaseTest {
 	private String password1;
 	private String password2;
 	
-	@BeforeTest
+	@BeforeMethod
 	@Parameters({ "username1", "password1", "username2", "password2" })
 	public void beforeSpamTest(String username1, String password1, String username2, String password2){
 		this.username1 = username1;
@@ -58,12 +59,16 @@ public class LetterGoToSpam_01 extends BaseTest {
 		
 		step(8);
 		steps.goToSpam();
-		Assert.assertTrue(steps.isLetterInSpam(username1, messageUser1),"Letter in Spam!", "Letter doesn't in spam!");
+		Assert.assertTrue(steps.isLetterInSpam(messageUser1),"Letter in Spam!", "Letter doesn't in spam!");
 		
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void afterSpamTest(){
+		info("========== Postcondition========== ");
+		Browser.getInstance().deleteAllCookiesAndRefresh();
+		steps.loginGmail(username2, password2);
+		steps.goToSpam();
 		steps.returnMessageFromSpam(messageUser1);
 	}
 

@@ -1,6 +1,6 @@
 package webdriver;
 
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 
 import test.Steps.Steps;
 
@@ -13,7 +13,7 @@ public abstract class BaseTest extends BaseEntity {
 		return message;
 	}
 	
-	@BeforeTest
+	@BeforeMethod
 	public void startTest(){
 		Logger.getInstance().logTestName(this.getClass().getSimpleName());
 	}

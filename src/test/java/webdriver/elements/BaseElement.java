@@ -33,7 +33,6 @@ abstract class BaseElement extends BaseEntity implements Element {
 			this.element = browser.getWebDriver().findElement(locator);
 		} catch (NoSuchElementException e) {
 			warn(e.toString().substring(0, e.getMessage().indexOf("seconds")));
-			throw new RuntimeException(e);
 		}
 	}
     
@@ -134,7 +133,7 @@ abstract class BaseElement extends BaseEntity implements Element {
 			browser.getWebDriver().manage().timeouts().implicitlyWait(Integer.valueOf(browser.getImplicitlyWait()), TimeUnit.SECONDS);
 			return element.isDisplayed();
 		} catch (Exception e) {
-			warn(e.getMessage().substring(0, e.getMessage().indexOf("}")));
+			warn(e.getMessage().substring(0, e.getMessage().indexOf("waiting")));
 			
 		}
 		return false;

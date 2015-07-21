@@ -18,11 +18,22 @@ public class MainPage extends BasePage{
 	protected static final String xpathSettingDropDown = "//div[text()='Интерфейс:']";
 	protected Label lbAlertBigFile;
 	protected Label lbSettingDropDown;
+
+	protected final String xPathSendersEmail = "(//table[@class='F cf zt']//div[@class='yW']/span)";
+	
+	protected static final String SENDER_TIME_ATRIBUTE = "aria-label";
+	protected static final String SENDER_EMAIL_ATRIBUTE = "email";
+	protected static final String xPathSendersTheme = "(//table[@class='F cf zt']//div[@class='y6']/span[1])";
+	protected static final String xPathSendersTime = "(//table[@class='F cf zt']//td[@class='xW xY ']/span)";
 	
 	protected final String xPathLetter = "//*[@email='%s']/ancestor::td/following-sibling::td[@class='xY a4W']"
 			+ "//*[contains(text(),'%s')]/ancestor::td/following-sibling::td"
 			+ "//span[@aria-label='%s']";
 	protected Label lbLetter;
+	
+	protected final String xPathStar = ".//*[@aria-label='Помеченные']";
+	protected Label lbStar;
+	
 	
 	@FindBy(xpath = "//div[text()='НАПИСАТЬ']")
 	protected Button btnWtriteNewMessage;
@@ -42,14 +53,15 @@ public class MainPage extends BasePage{
 	@FindBy(xpath = "(//table[@class='F cf zt']//td[@class='oZ-x3 xY'])[1]")
 	protected Label lbSelectTopMessage;
 	
+	@FindBy(xpath = "(//table[@class='F cf zt']//td[@class='apU xY'])[1]")
+	protected Label lbStarTopMessage;
+	
 	@FindBy(xpath = "//*[@*='В спам!']")
 	protected Button btnMarkAsSpam;
-		
-	protected final String xPathSendersEmail = "(//table[@class='F cf zt']//div[@class='yW']/span)";
-	protected static final String SENDER_TIME_ATRIBUTE = "aria-label";
-	protected static final String SENDER_EMAIL_ATRIBUTE = "email";
-	protected static final String xPathSendersTheme = "(//table[@class='F cf zt']//div[@class='y6']/span[1])";
-	protected static final String xPathSendersTime = "(//table[@class='F cf zt']//td[@class='xW xY ']/span)";
+	
+	@FindBy(xpath = "//div[@class='gmail_signature']/div")
+	protected Label lbSignature;
+	
 	
 	protected MainPage(By locale, String title) {
 		super(locale, title);
@@ -57,7 +69,7 @@ public class MainPage extends BasePage{
 	}
 	
 	public MainPage() {
-		super(By.id("gbqf"), "Main Page");
+		super(By.xpath("//tr[@role='tablist']"), "Main Page");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	}
 
@@ -87,7 +99,6 @@ public class MainPage extends BasePage{
 
 	public Boolean isAlertBigFile() {
 		lbAlertBigFile = new LabelElement(By.xpath(xpathAlertBigFile));
-		lbAlertBigFile.click();
 		return lbAlertBigFile.isPresent();
 	}
 
@@ -120,7 +131,21 @@ public class MainPage extends BasePage{
 		return !lbLetter.isPresent(By.xpath(String.format(xPathLetter , markedLetter.getSenderUsername(),  markedLetter.getTheme(), markedLetter.getTimeSend())));
 	}
 
-	
-	
+	public Boolean isSignatureInMessage(String singnature) {
+		return lbSignature.getElement().getText().equals(singnature);
+	}
+
+	public Letter starredTopMessage() {
+		lbStarTopMessage.click();
+		String senderName = new LabelElement(By.xpath(xPathSendersEmail + "[1]")).getElement().getAttribute(SENDER_EMAIL_ATRIBUTE);
+		String senderTheme = new LabelElement(By.xpath(xPathSendersTheme + "[1]")).getElement().getText();
+		String senderTime = new LabelElement(By.xpath(xPathSendersTime  +"[1]")).getElement().getAttribute(SENDER_TIME_ATRIBUTE);
+		return new Letter(senderTheme, "" , senderTime, senderName);
+	}
+
+	public Boolean isStarSelect() {
+		lbStar = new LabelElement(By.xpath(xPathStar));
+		return lbStar.isPresent();
+	}
 
 }
