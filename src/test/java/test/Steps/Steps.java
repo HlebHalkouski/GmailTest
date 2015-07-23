@@ -289,4 +289,16 @@ public class Steps extends BaseEntity {
 		RobotForAttachFile.attachFile(attachFile);
 	}
 
+	public void vacationResponderOn(Letter letterResponder) {
+		SettingPage settingPage = new SettingPage();
+		settingPage.vacationResponderOn(letterResponder);
+		
+	}
+
+	public void vacationResponderOff() {
+		SettingPage settingPage = new SettingPage();
+		settingPage.vacationResponderOff();
+		
+	}
+
 }

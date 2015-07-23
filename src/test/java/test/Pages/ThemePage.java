@@ -31,7 +31,7 @@ public class ThemePage extends BasePage{
 	
 	
 	public ThemePage() {
-		super(By.xpath("//div[@class='Kj-JD a8j']"), "Theme Page");
+		super(By.xpath("//div[@class='Kj-JD a8j']"), "Theme");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	}
 	

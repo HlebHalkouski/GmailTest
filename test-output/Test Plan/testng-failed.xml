@@ -15,55 +15,16 @@
     <parameter name="password1" value="dr71gleb"/>
     <parameter name="username1" value="hlebtemp@gmail.com"/>
     <classes>
-      <class name="test.CheckingSignature_12">
+      <class name="test.CheckVacation_14">
         <methods>
-          <include name="CheckingSignatureTest"/>
-        </methods>
-      </class> <!-- test.CheckingSignature_12 -->
-      <class name="test.MainMailBoxPage_03">
-        <methods>
-          <include name="MainMailBoxPageTest"/>
-        </methods>
-      </class> <!-- test.MainMailBoxPage_03 -->
-      <class name="test.CheckStarSelection_13">
-        <methods>
-          <include name="CheckStarSelection"/>
-          <include name="afterMainMailBoxPageTest"/>
-        </methods>
-      </class> <!-- test.CheckStarSelection_13 -->
-      <class name="test.Forward_02">
-        <methods>
-          <include name="afterForwardTest"/>
-          <include name="ForwardTest"/>
-          <include name="before"/>
-          <include name="beforForwardTest"/>
-          <include name="startTest"/>
-        </methods>
-      </class> <!-- test.Forward_02 -->
-      <class name="test.MarkItemAsSpam_11">
-        <methods>
-          <include name="MarkItemAsSpamTest"/>
-        </methods>
-      </class> <!-- test.MarkItemAsSpam_11 -->
-      <class name="test.SendMailWithAttachement_05">
-        <methods>
-          <include name="SendMailWithAttachementTest"/>
-        </methods>
-      </class> <!-- test.SendMailWithAttachement_05 -->
-      <class name="test.Themes_04">
-        <methods>
-          <include name="ThemesTest"/>
-        </methods>
-      </class> <!-- test.Themes_04 -->
-      <class name="test.LetterGoToSpam_01">
-        <methods>
-          <include name="afterSpamTest"/>
-          <include name="beforeSpamTest"/>
+          <include name="CheckVacationTest"/>
+          <include name="beforeCheckVacationTest"/>
           <include name="before"/>
           <include name="startTest"/>
           <include name="after"/>
+          <include name="afterCheckVacationTest"/>
         </methods>
-      </class> <!-- test.LetterGoToSpam_01 -->
+      </class> <!-- test.CheckVacation_14 -->
     </classes>
   </test> <!-- Smoke Tests(failed) -->
 </suite> <!-- Failed suite [Test Plan] -->

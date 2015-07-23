@@ -17,10 +17,9 @@ public class CheckingSignature_12 extends BaseTest {
 		singnature = RandomUtil.getRandomString(10);
 		info("Precondition: ");
 		steps.loginGmail(username1, password1);
-
 	}
 
-	@Test
+	@Test(alwaysRun = true)
 	public void CheckingSignatureTest() {
 		step(1, 2);
 		steps.enterSetting();

@@ -19,7 +19,7 @@ public class MarkItemAsSpam_11 extends BaseTest {
 		steps.loginGmail(username1, password1);
 	}
 
-	@Test
+	@Test(alwaysRun = true)
 	public void MarkItemAsSpamTest() {
 
 		step(1, 2);

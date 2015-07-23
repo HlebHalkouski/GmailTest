@@ -69,7 +69,7 @@ public class MainPage extends BasePage{
 	}
 	
 	public MainPage() {
-		super(By.xpath("//tr[@role='tablist']"), "Main Page");
+		super(By.xpath("//tr[@role='tablist']"), "Main");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	}
 

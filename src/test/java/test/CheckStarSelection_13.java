@@ -25,7 +25,7 @@ public class CheckStarSelection_13 extends BaseTest {
 
 	}
 
-	@Test
+	@Test(alwaysRun = true)
 	public void CheckStarSelection() {
 
 		step(1);
@@ -38,11 +38,12 @@ public class CheckStarSelection_13 extends BaseTest {
 
 	}
 	
-	@AfterMethod(alwaysRun = true)
+	@AfterMethod
 	public void afterMainMailBoxPageTest(){
 		info("Postcondition: ");
 		Browser.getInstance().deleteAllCookiesAndRefresh();
 		steps.loginGmail(username1, password1);
 		steps.starredTopMessage();
 	}
+	
 }

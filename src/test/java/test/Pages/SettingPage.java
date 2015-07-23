@@ -5,12 +5,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import webdriver.BasePage;
-import webdriver.elements.LabelElement;
 import webdriver.elements.interfaces.Button;
 import webdriver.elements.interfaces.Label;
 import webdriver.elements.interfaces.RadioButton;
 import webdriver.elements.interfaces.TextBox;
 import webdriver.fieldDecorator.FieldDecorator;
+import webdriver.utils.Letter;
 
 public class SettingPage extends BasePage {
 	
@@ -26,11 +26,24 @@ public class SettingPage extends BasePage {
 	@FindBy(xpath = "//button[@guidedhelpid='save_changes_button']")
 	private Button btnSaveChanges;
 	
-	private String xPathDisabledSaveChanges = "//button[@guidedhelpid='save_changes_button'][@disabled]";
+	@FindBy(xpath = "//label[contains(text(), 'Включить автоответчик')]/ancestor::td/preceding-sibling::td/input")
+	private RadioButton rbSelectResponderOn;
+	
+	@FindBy(xpath = "//label[contains(text(), 'Отключить автоответчик')]/ancestor::td/preceding-sibling::td/input")
+	private RadioButton rbSelectResponderOff;
+	
+	@FindBy(xpath = "//input[@aria-label='Тема']")
+	private TextBox tbxThemeResponder;
+	
+	@FindBy(xpath = "//div[@aria-label='Автоответчик']")
+	private TextBox tbxBodyResponder;
+	
+	private final String xPathDisabledSaveChanges = "//button[@guidedhelpid='save_changes_button'][@disabled]";
+	@FindBy(xpath = xPathDisabledSaveChanges)
 	private Label lbDisabledSaveChanges;
 	
 	public SettingPage() {
-		super(By.xpath("//h2[contains(text(),'Настройки')]"), "Setting Page");
+		super(By.xpath("//h2[contains(text(),'Настройки')]"), "Setting");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);	
 	}
 
@@ -45,11 +58,21 @@ public class SettingPage extends BasePage {
 
 	public void saveSettingsChange() {
 		do{
-			lbDisabledSaveChanges = new LabelElement(By.xpath(xPathDisabledSaveChanges));
-		}while (lbDisabledSaveChanges.isPresent());
+		}while (lbDisabledSaveChanges.isPresent(By.xpath(xPathDisabledSaveChanges)));
 		btnSaveChanges.click();		
 	}
 
+	public void vacationResponderOn(Letter letterResponder) {
+		rbSelectResponderOn.click();		
+		tbxThemeResponder.clearAndType(letterResponder.getTheme());
+		tbxBodyResponder.clearAndType(letterResponder.getBody());
+		saveSettingsChange();
+	}
+
+	public void vacationResponderOff() {
+		rbSelectResponderOff.click();
+		saveSettingsChange();
+	}
 	
 	
 }

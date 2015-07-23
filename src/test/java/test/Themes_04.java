@@ -22,7 +22,7 @@ public class Themes_04 extends BaseTest {
 		attachFile = RandomUtil.getFile(SIZE_ATACH_FILE);
 	}
 
-	@Test
+	@Test(alwaysRun = true)
 	public void ThemesTest() {
 
 		step(1);

@@ -20,14 +20,14 @@ import webdriver.elements.interfaces.Element;
 abstract class BaseElement extends BaseEntity implements Element {
     
 	protected WebElement element;
-	private By locator;
+	protected By locator;
 	
   
 	protected BaseElement(final WebElement wrappedElement) {
         this.element =  wrappedElement;
     }
     
-    public BaseElement(By locator) {
+	protected BaseElement(By locator) {
 		this.locator = locator;
 		try {
 			this.element = browser.getWebDriver().findElement(locator);

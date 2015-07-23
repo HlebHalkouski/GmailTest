@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
 	
 	
 	public LoginPage() {
-		super(By.id("gaia_loginform"), "Login Page");
+		super(By.id("gaia_loginform"), "Login");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	}
 	

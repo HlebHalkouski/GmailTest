@@ -10,13 +10,13 @@ public abstract class BaseEntity {
 	protected Logger logger = Logger.getInstance();
 	
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void before() {
 		browser = Browser.getInstance();
 		logger = Logger.getInstance();
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void after() {
 		if (browser.isBrowserAlive()) {
 			browser.exit();

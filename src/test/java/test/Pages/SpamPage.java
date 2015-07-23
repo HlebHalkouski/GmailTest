@@ -8,7 +8,7 @@ import webdriver.utils.Letter;
 public class SpamPage extends MainPage {
 
 	public SpamPage(){
-		super(By.xpath("//div[@class='ya']"), "Spam Page");
+		super(By.xpath("//div[@class='ya']"), "Spam");
 	}
 
 	public boolean isLetterInFolder(String username, Letter letterUser) {

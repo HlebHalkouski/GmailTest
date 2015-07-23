@@ -27,7 +27,7 @@ public class MainMailBoxPage_03  extends BaseTest{
 	}
 	
 	
-	@Test
+	@Test(alwaysRun = true)
 	public void MainMailBoxPageTest()
 	{
 		step(1);

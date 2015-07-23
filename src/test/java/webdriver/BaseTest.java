@@ -13,7 +13,7 @@ public abstract class BaseTest extends BaseEntity {
 		return message;
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void startTest(){
 		Logger.getInstance().logTestName(this.getClass().getSimpleName());
 	}

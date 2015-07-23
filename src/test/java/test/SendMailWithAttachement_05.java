@@ -26,7 +26,7 @@ public class SendMailWithAttachement_05 extends BaseTest {
 		steps.loginGmail(username1, password1);
 	}
 
-	@Test
+	@Test(alwaysRun = true)
 	public void SendMailWithAttachementTest() {
 		step(1);
 		steps.startWriteNewMessage();

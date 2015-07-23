@@ -92,7 +92,7 @@ public class ForwardPage extends BasePage {
 
 	
 	public ForwardPage() {
-		super(By.xpath(".//span[contains(text(), 'Пересылка')]"), "ForwardPage");
+		super(By.xpath(".//span[contains(text(), 'Пересылка')]"), "Forward");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	}
 

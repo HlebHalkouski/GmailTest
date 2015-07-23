@@ -33,7 +33,7 @@ public class MessagePage extends BasePage{
 	private Label lbLinkConfirmForward;
 	
 	public MessagePage() {
-		super(By.xpath("//div[@class='G3 G2']"), "Message Page");
+		super(By.xpath("//div[@class='G3 G2']"), "Message");
 		PageFactory.initElements(new FieldDecorator(browser.getWebDriver()), this);
 	}
 

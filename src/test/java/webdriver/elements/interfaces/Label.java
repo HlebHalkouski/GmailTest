@@ -5,5 +5,4 @@ public interface Label extends Element {
 	void click();
 
 
-
 }
