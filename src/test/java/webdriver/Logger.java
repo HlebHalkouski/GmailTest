@@ -1,7 +1,12 @@
 package webdriver;
 
+import java.io.File;
+
+import org.openqa.selenium.OutputType;
 import org.testng.Assert;
 import org.testng.Reporter;
+
+import webdriver.utils.DropBoxSaver;
 
 /**
  * This class is using for a creating extended log. It implements a Singleton
@@ -126,7 +131,11 @@ public final class Logger {
 		logger.fatal(message);
 		msg = "<div class=\"failedConfig\">" + msg + "</div>"; // red color from
 																// reportng css
+		File errorImage  = Browser.getInstance().getWebDriver().getScreenshotAs(OutputType.FILE);
+		String urlImage = DropBoxSaver.saveScreenshop(errorImage);
+		
 		Reporter.log(msg + "<br>");
+		Reporter.log(urlImage + "<br>");
 		Assert.assertTrue(false, message);
 	}
 }

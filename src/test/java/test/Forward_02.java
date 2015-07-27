@@ -49,7 +49,7 @@ public class Forward_02 extends BaseTest {
 
 		step(2, 3);
 		steps.enterSetting();
-
+		
 		step(4, 5);
 		letterForward = steps.setForwardToUser(username3);
 
@@ -81,7 +81,7 @@ public class Forward_02 extends BaseTest {
 		letterWithAttach = steps.sendAttachMessageToUser(username1, username2, attachFile);
 
 		browser.deleteAllCookiesAndRefresh();
-
+		
 		step(16);
 		steps.loginGmail(username2, password2);
 

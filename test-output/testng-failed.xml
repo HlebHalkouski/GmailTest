@@ -15,16 +15,16 @@
     <parameter name="password1" value="dr71gleb"/>
     <parameter name="username1" value="hlebtemp@gmail.com"/>
     <classes>
-      <class name="test.CheckVacation_14">
+      <class name="test.Forward_02">
         <methods>
-          <include name="CheckVacationTest"/>
-          <include name="beforeCheckVacationTest"/>
+          <include name="afterForwardTest"/>
+          <include name="ForwardTest"/>
           <include name="before"/>
+          <include name="beforForwardTest"/>
           <include name="startTest"/>
           <include name="after"/>
-          <include name="afterCheckVacationTest"/>
         </methods>
-      </class> <!-- test.CheckVacation_14 -->
+      </class> <!-- test.Forward_02 -->
     </classes>
   </test> <!-- Smoke Tests(failed) -->
 </suite> <!-- Failed suite [Test Plan] -->

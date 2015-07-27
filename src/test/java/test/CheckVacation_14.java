@@ -31,6 +31,8 @@ public class CheckVacation_14 extends BaseTest {
 		this.password2 = password2;
 		letterResponder = new Letter(themeResponder, bodyResponder, GregorianCalendar.getInstance(), username1);
 		steps.loginGmail(username1, password1);
+	
+		
 	}
 	
 	@Test(alwaysRun = true)
